@@ -12,22 +12,6 @@
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nitems, size_t size)
-{
-	char	*s1;
-	int		i;
-	int		n;
-
-	i = 0;
-	n = nitems * size;
-	s1 = malloc(nitems * size);
-	if (!s1)
-		return (NULL);
-	while (n--)
-		s1[i++] = '\0';
-	return (s1);
-}
-
 int	ft_strlen_get(char *s1)
 {
 	int	i;

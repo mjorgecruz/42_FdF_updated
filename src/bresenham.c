@@ -44,7 +44,7 @@ int	build_img(t_data *data)
 	char	*ptr;
 
 	ptr = NULL;
-	if (data->u < (WIDTH - 200) && data->u >= 0 \
+	if (data->u < (WIDTH - 235) && data->u >= 0 \
 	&& data->v < (HEIGHT) && data->v >= 0)
 	{
 		ptr = data->img.addr + (int)data->u * (data->img.bpp / 8) \

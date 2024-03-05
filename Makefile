@@ -14,6 +14,7 @@ SRC = ./src/fdf.c\
 	./src/rotation.c\
 	./src/transf_zoom.c\
 	./src/errors.c\
+	./src/ftoa.c\
 
 OBJ = $(SRC:.c=.o)
 

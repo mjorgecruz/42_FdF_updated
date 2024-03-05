@@ -34,6 +34,18 @@ typedef struct s_img
 	int		endian;
 }	t_img;
 
+typedef struct s_info
+{
+	char	*angle_x;
+	char	*angle_y;
+	char	*angle_z;
+	char	*zoom;
+	char	*high;
+	char	*horizontal;
+	char	*Vertical;
+	char	*color_rad;
+}	t_info;
+
 typedef struct s_fdf
 {
 	float	z;
@@ -70,6 +82,9 @@ typedef struct s_data
 	int		y;
 	int		prev_x;
 	int		prev_y;
+	char	*menu_img;
+	char	*menu;
+	t_info	info;
 	t_fdf	**map;
 	t_img	img;
 }	t_data;
@@ -170,5 +185,9 @@ int		increase_z(t_data *data);
 
 void	ft_free_map(t_data *data);
 void	ft_free_splited(char **splited);
+
+
+
+void ftoa(float n, char* res, int afterpoint) ;
 
 #endif

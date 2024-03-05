@@ -30,13 +30,31 @@ int	handle_keypress(int keysym, t_data *data)
 	else if (keysym == XK_F1 || keysym == XK_F2 || keysym == XK_F3 \
 	|| keysym == XK_p)
 		color_handler(keysym, data);
+	free(data->info.angle_x);
+	free(data->info.angle_y);
+	free(data->info.angle_z);
+	free(data->info.zoom);
+	free(data->info.high);
+	free(data->info.horizontal);
+	free(data->info.Vertical);
+	free(data->info.color_rad);
 	mlx_destroy_image(data->mlx_ptr, data->img.mlx_img);
+	mlx_destroy_image(data->mlx_ptr, data->menu_img);
 	render_map(data);
 	return (0);
 }
 
 int	handle_close(t_data *data)
 {
+	free(data->info.angle_x);
+	free(data->info.angle_y);
+	free(data->info.angle_z);
+	free(data->info.zoom);
+	free(data->info.high);
+	free(data->info.horizontal);
+	free(data->info.Vertical);
+	free(data->info.color_rad);
+	mlx_destroy_image(data->mlx_ptr, data->menu_img);
 	mlx_destroy_image(data->mlx_ptr, data->img.mlx_img);
 	mlx_destroy_window(data->mlx_ptr, data->win_ptr);
 	data->win_ptr = NULL;
