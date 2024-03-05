@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ruiolive <ruiolive@student.42.fr>          +#+  +:+       +#+        */
+/*   By: masoares <masoares@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 10:34:56 by ruiolive          #+#    #+#             */
-/*   Updated: 2023/12/06 14:03:42 by ruiolive         ###   ########.fr       */
+/*   Updated: 2024/03/05 11:51:28 by masoares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,6 +116,7 @@ float	positive(float n);
 float	max_step(float x_step, float y_step);
 void	bresenham(t_data *data, double x1, double y1);
 
+
 ///////////////////////////////
 //     Handlers Functions    //
 ///////////////////////////////
@@ -170,5 +171,21 @@ int		increase_z(t_data *data);
 
 void	ft_free_map(t_data *data);
 void	ft_free_splited(char **splited);
+
+///////////////////////////////
+//       Roid_functions      //
+///////////////////////////////
+
+void	roid_open_window(t_data *data);
+int		roid_render_map(t_data *data);
+void	roid_map_par(t_data *data);
+void	roid_map_impar(t_data *data);
+void	roid_map_misto1(t_data *data);
+void	roid_map_misto2(t_data *data);
+void	roid_bresenham(t_data *data, double x1, double y1);
+int		roid_rotation(t_data *data, double *x1, double *y1);
+int		roid_handle_keypress(int keysym, t_data *data);
+int		roid_handle_mouse_move(int x, int y, t_data *data);
+int		roid_handle_mouse_down(int button, int x, int y, t_data *data);
 
 #endif

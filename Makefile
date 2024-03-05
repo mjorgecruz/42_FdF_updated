@@ -14,6 +14,7 @@ SRC = ./src/fdf.c\
 	./src/rotation.c\
 	./src/transf_zoom.c\
 	./src/errors.c\
+	./src/roid_functions.c\
 
 OBJ = $(SRC:.c=.o)
 
@@ -23,7 +24,7 @@ RM = rm -rf
 
 INCLUDE = fdf.h
 
-CFLAGS = -Wall -Werror -Wextra -g -fsanitize=address
+CFLAGS = -Wall -Werror -Wextra -g
 
 LIBFT = ./include/Libft/libft.a
 
