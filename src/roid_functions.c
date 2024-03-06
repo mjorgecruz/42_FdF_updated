@@ -6,7 +6,7 @@
 /*   By: masoares <masoares@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 10:11:05 by masoares          #+#    #+#             */
-/*   Updated: 2024/03/05 12:06:14 by masoares         ###   ########.fr       */
+/*   Updated: 2024/03/06 00:21:28 by masoares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,6 +146,34 @@ void	roid_bresenham(t_data *data, double x1, double y1)
 	}
 }
 
+void	roid_bresenham_surfaces(t_data *data, double x1, double y1)
+{
+	//(x1, y1) = (x+1, y+1)
+	data->u = data->x;
+	data->v = data->y;
+	data->z = data->map[data->y + (data->height / 2)] \
+	[data->x + (data->width / 2)].z;
+	data->z1 = data->map[(int)y1 + (data->height / 2)] \
+	[(int)x1 + (data->width / 2)].z;
+	data->color_default = data->map[data->y + (data->height / 2)] \
+	[data->x + (data->width / 2)].color;
+	colors_change(data);
+	rotation(data, &x1, &y1);
+	zoom(&x1, &y1, data);
+	map_move(&x1, &y1, data);
+	data->x_step = x1 - data->u;
+	data->y_step = y1 - data->v;
+	data->max = max_step(positive(data->x_step), positive(data->y_step));
+	data->x_step /= data->max;
+	data->y_step /= data->max;
+	while ((int)(data->u - x1) || (int)(data->v - y1))
+	{
+		build_img(data);
+		data->u += data->x_step;
+		data->v += data->y_step;
+	}
+}
+
 int	roid_rotation(t_data *data, double *x1, double *y1)
 {
 	double	latitude;
@@ -154,17 +182,26 @@ int	roid_rotation(t_data *data, double *x1, double *y1)
 	double	longitude1;
 	double	R;
 	
-	R = data->width /(6.28); 
+	R = (data->width -1) /(6.28);
 	longitude = (data->x)/ (R);
-	latitude = 2 *atan(exp(data->y/(R))) - 3.14/2;
+	latitude = -3.14/data->height * data->y;
+	
 	longitude1 = (*x1)/ R;
-	latitude1 = 2 *atan(exp(*y1/(R))) - 3.14/2;
-	data->v = (R + data->z/25)* cos(latitude) *cos(longitude);
-	data->u = (R + data->z/25) * cos(latitude) *sin(longitude);
-	data->z = (R + data->z/25) * sin(latitude);
-	*y1= (R + data->z1/25) * cos(latitude1) *cos(longitude1);
-	*x1 = (R + data->z1/25) * cos(latitude1) *sin(longitude1);
-	data->z1 = (R + data->z1/25) * sin(latitude1);
+	latitude1 = -3.14/data->height * (*y1);
+	if (data->y == (data->height/2))
+		latitude = -3.14/2;
+	else if (data->y == -(data->height/2))
+		latitude = 3.14/2;
+	if ((*y1) == (data->height/2))
+		latitude1 = -3.1/2;
+	else if ((*y1) == -(data->height/2))
+		latitude1 = 3.1/2;
+	data->v = (R + data->z/100)* cos(latitude) *cos(longitude);
+	data->u = (R + data->z/100) * cos(latitude) *sin(longitude);
+	data->z = (R + data->z/100) * sin(latitude);
+	*y1= (R + data->z1/100) * cos(latitude1) *cos(longitude1);
+	*x1 = (R + data->z1/100) * cos(latitude1) *sin(longitude1);
+	data->z1 = (R + data->z1/100) * sin(latitude1);
 	rotate_y_axis(data, &data->u, &data->z);
 	rotate_y_axis(data, x1, &data->z1);
 	rotate_z_axis(data, &data->u, &data->v);

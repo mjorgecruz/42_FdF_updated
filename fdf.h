@@ -6,7 +6,7 @@
 /*   By: masoares <masoares@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 10:34:56 by ruiolive          #+#    #+#             */
-/*   Updated: 2024/03/05 11:51:28 by masoares         ###   ########.fr       */
+/*   Updated: 2024/03/05 17:06:55 by masoares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -184,6 +184,7 @@ void	roid_map_misto1(t_data *data);
 void	roid_map_misto2(t_data *data);
 void	roid_bresenham(t_data *data, double x1, double y1);
 int		roid_rotation(t_data *data, double *x1, double *y1);
+int		roid_rotation_new(t_data *data, double *x1, double *y1);
 int		roid_handle_keypress(int keysym, t_data *data);
 int		roid_handle_mouse_move(int x, int y, t_data *data);
 int		roid_handle_mouse_down(int button, int x, int y, t_data *data);
