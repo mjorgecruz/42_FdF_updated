@@ -35,7 +35,7 @@ int	init_window(t_data *data)
 	data->menu_color = 0x444444;
 	data->color_save = 0;
 	data->add_color = 1;
-	data->menu = "./sprites/menu.xpm";
+	data->menu = "./sprites_xpm/menu.xpm";
 	get_max_z(data);
 	get_min_z(data);
 	data->mlx_ptr = mlx_init();

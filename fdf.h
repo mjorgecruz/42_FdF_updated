@@ -185,6 +185,7 @@ int		increase_z(t_data *data);
 
 void	ft_free_map(t_data *data);
 void	ft_free_splited(char **splited);
+void	free_info(t_data *data);
 
 
 

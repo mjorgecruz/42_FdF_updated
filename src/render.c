@@ -12,6 +12,8 @@
 
 #include "../fdf.h"
 
+static int	get_new_max_z(t_data *data);
+
 int	render_map(t_data *data)
 {
 	int	x;
@@ -54,26 +56,48 @@ void	render_strings1(t_data *data)
 	data->info.Vertical = NULL;
 	data->info.color_rad = NULL;
 
-	ftoa(data->angle_x, data->info.angle_x, 2);
-	ftoa(data->angle_y, data->info.angle_y, 2);
-	ftoa(data->angle_z, data->info.angle_z, 2);
-	ftoa((float)data->zoom, data->info.zoom, 2);
-	data->info.high = ft_itoa(data->max_z);
+	ftoa(data->angle_x, data->info.angle_x, 1);
+	ftoa(data->angle_y, data->info.angle_y, 1);
+	ftoa(data->angle_z, data->info.angle_z, 1);
+	ftoa((float)data->zoom, data->info.zoom, 1);
+	data->info.high = ft_itoa(get_new_max_z(data));
 	data->info.horizontal =  ft_itoa(data->hor);
 	data->info.Vertical =  ft_itoa(data->hey);
 	data->info.color_rad = ft_itoa(data->add_color);
-	mlx_string_put(data->mlx_ptr, data->win_ptr, 194,
-	221, 0x000000, data->info.angle_x);
-	mlx_string_put(data->mlx_ptr, data->win_ptr, 194,
+	mlx_string_put(data->mlx_ptr, data->win_ptr, 192,
+	224, 0x000000, data->info.angle_x);
+	mlx_string_put(data->mlx_ptr, data->win_ptr, 192,
 	256, 0x000000, data->info.angle_y);
-	mlx_string_put(data->mlx_ptr, data->win_ptr, 194,
+	mlx_string_put(data->mlx_ptr, data->win_ptr, 192,
 	289, 0x000000, data->info.angle_z);
-	mlx_string_put(data->mlx_ptr, data->win_ptr, 190,
+	mlx_string_put(data->mlx_ptr, data->win_ptr, 188,
 	381, 0x000000, data->info.zoom);
-	mlx_string_put(data->mlx_ptr, data->win_ptr, 196,
+	mlx_string_put(data->mlx_ptr, data->win_ptr, 194,
 	472, 0x000000, data->info.high);
-	mlx_string_put(data->mlx_ptr, data->win_ptr, 194,
-	507, 0x000000, data->info.horizontal);
-	mlx_string_put(data->mlx_ptr, data->win_ptr, 194,
-	540, 0x000000, data->info.Vertical);
+	mlx_string_put(data->mlx_ptr, data->win_ptr, 192,
+	505, 0x000000, data->info.horizontal);
+	mlx_string_put(data->mlx_ptr, data->win_ptr, 192,
+	539, 0x000000, data->info.Vertical);
+}
+
+static int	get_new_max_z(t_data *data)
+{
+	int	x;
+	int	y;
+	int	z;
+
+	y = 0;
+	z = -1000;
+	while (y < data->height)
+	{
+		x = 0;
+		while (x < data->width)
+		{
+			if (data->map[y][x].z > z)
+				z = data->map[y][x].z;
+			x++;
+		}
+		y++;
+	}
+	return (z);
 }
