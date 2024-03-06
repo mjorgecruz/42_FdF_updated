@@ -19,7 +19,7 @@ int	render_map(t_data *data)
 	int	x;
 	int	y;
 
-	data->menu_img = mlx_xpm_file_to_image(data->mlx_ptr, data->menu, &x, &y);
+	data->menu_img = mlx_xpm_file_to_image(data->mlx_ptr, data->menu_file, &x, &y);
 	data->img.mlx_img = mlx_new_image(data->mlx_ptr, WIDTH - 235, HEIGHT);
 	data->img.addr = mlx_get_data_addr(data->img.mlx_img, &data->img.bpp, \
 	&data->img.line_len, &data->img.endian);

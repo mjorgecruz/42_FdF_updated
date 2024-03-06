@@ -83,9 +83,13 @@ typedef struct s_data
 	int		prev_x;
 	int		prev_y;
 	int		render_status;
+	char	*map_to_render;
+	char	*choose_img;
+	char	*choose_file;
+	char	*menu_entry_file;
 	char	*entry_img;
 	char	*menu_img;
-	char	*menu;
+	char	*menu_file;
 	t_info	info;
 	t_fdf	**map;
 	t_img	img;
@@ -109,6 +113,7 @@ void	ft_open_error(int fd);
 
 int		init_window(t_data *data);
 void	open_window(t_data *data);
+void	init_data(t_data *data);
 
 ///////////////////////////////
 //      Render Functions     //
@@ -123,6 +128,8 @@ void	map_par(t_data *data);
 void	map_impar(t_data *data);
 void	map_misto1(t_data *data);
 void	map_misto2(t_data *data);
+int		render_menu(t_data *data);
+int		render_choose_menu(t_data *data);
 
 ///////////////////////////////
 //    Bresenham Functions    //
@@ -139,10 +146,19 @@ void	bresenham(t_data *data, double x1, double y1);
 ///////////////////////////////
 
 int		handle_keypress(int keysym, t_data *data);
+int		handle_entry_menu_keypress(int keysym, t_data *data);
 int		handle_close(t_data *data);
+int		handle_menu_close(t_data *data);
+int		handle_menu_choose_close(t_data *data);
 int		handle_mouse_move(int x, int y, t_data *data);
+int		handle_entry_mouse_move(int x, int y, t_data *data);
+int		handle_choose_map_mouse_move(int x, int y, t_data *data);
 int		handle_mouse_down(int button, int x, int y, t_data *data);
+int		handle_entry_mouse_down(int button, int x, int y, t_data *data);
+int		handle_choose_map_mouse_down(int button, int x, int y, t_data *data);
 int		handle_mouse_up(int button, int x, int y, t_data *data);
+int		handle_entry_mouse_up(int button, int x, int y, t_data *data);
+int		handle_choose_map_mouse_up(int button, int x, int y, t_data *data);
 int		move_handle(int keysym, t_data *data);
 int		angle_handle(int keysym, t_data *data);
 int		projection_handle(int keysym, t_data *data);

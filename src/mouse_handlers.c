@@ -36,39 +36,39 @@ int	handle_mouse_move(int x, int y, t_data *data)
 		data->prev_x = x;
 		data->prev_y = y;
 	}
-	else if (x > 215 && x < 230 && y > 210 && y < 225 && strcmp(data->menu, "./sprites_xpm/x_right.xpm"))
-		data->menu = "./sprites_xpm/x_right.xpm";
-	else if (x > 170 && x < 185 && y > 210 && y < 225 && strcmp(data->menu, "./sprites_xpm/x_left.xpm"))
-		data->menu = "./sprites_xpm/x_left.xpm";
-	else if (x > 215 && x < 230 && y > 245 && y < 260 && strcmp(data->menu, "./sprites_xpm/y_right.xpm"))
-		data->menu = "./sprites_xpm/y_right.xpm";
-	else if (x > 170 && x < 185 && y > 245 && y < 260 && strcmp(data->menu, "./sprites_xpm/y_left.xpm"))
-		data->menu = "./sprites_xpm/y_left.xpm";
-	else if (x > 215 && x < 230 && y > 278 && y < 293 && strcmp(data->menu, "./sprites_xpm/z_right.xpm"))
-		data->menu = "./sprites_xpm/z_right.xpm";
-	else if (x > 170 && x < 185 && y > 278 && y < 293 && strcmp(data->menu, "./sprites_xpm/z_left.xpm"))
-		data->menu = "./sprites_xpm/z_left.xpm";
-	else if (x > 215 && x < 230 && y > 370 && y < 385 && strcmp(data->menu, "./sprites_xpm/zoom_right.xpm"))
-		data->menu = "./sprites_xpm/zoom_right.xpm";
-	else if (x > 170 && x < 185 && y > 370 && y < 385 && strcmp(data->menu, "./sprites_xpm/zoom_left.xpm"))
-		data->menu = "./sprites_xpm/zoom_left.xpm";
-	else if (x > 215 && x < 230 && y > 461 && y < 476 && strcmp(data->menu, "./sprites_xpm/height_right.xpm"))
-		data->menu = "./sprites_xpm/height_right.xpm";
-	else if (x > 170 && x < 185 && y > 461 && y < 476 && strcmp(data->menu, "./sprites_xpm/height_left.xpm"))
-		data->menu = "./sprites_xpm/height_left.xpm";
-	else if (x > 215 && x < 230 && y > 496 && y < 511 && strcmp(data->menu, "./sprites_xpm/move_x_right.xpm"))
-		data->menu = "./sprites_xpm/move_x_right.xpm";
-	else if (x > 170 && x < 185 && y > 496 && y < 511 && strcmp(data->menu, "./sprites_xpm/move_x_left.xpm"))
-		data->menu = "./sprites_xpm/move_x_left.xpm";
-	else if (x > 215 && x < 230 && y > 529 && y < 544 && strcmp(data->menu, "./sprites_xpm/move_y_right.xpm"))
-		data->menu = "./sprites_xpm/move_y_right.xpm";
-	else if (x > 170 && x < 185 && y > 529 && y < 544 && strcmp(data->menu, "./sprites_xpm/move_y_left.xpm"))
-		data->menu = "./sprites_xpm/move_y_left.xpm";
-	else if (x > 60 && x < 170 && y > 725 && y < 765 && strcmp(data->menu, "./sprites_xpm/menu_reset.xpm"))
-		data->menu = "./sprites_xpm/menu_reset.xpm";
-	else if (x > 60 && x < 170 && y > 775 && y < 805 && strcmp(data->menu, "./sprites_xpm/menu_exit.xpm"))
-		data->menu = "./sprites_xpm/menu_exit.xpm";
-	else if (strcmp(data->menu, "./sprites_xpm/menu.xpm"))
+	else if (x > 215 && x < 230 && y > 210 && y < 225 && strcmp(data->menu_file, "./sprites_xpm/x_right.xpm"))
+		data->menu_file = "./sprites_xpm/x_right.xpm";
+	else if (x > 170 && x < 185 && y > 210 && y < 225 && strcmp(data->menu_file, "./sprites_xpm/x_left.xpm"))
+		data->menu_file = "./sprites_xpm/x_left.xpm";
+	else if (x > 215 && x < 230 && y > 245 && y < 260 && strcmp(data->menu_file, "./sprites_xpm/y_right.xpm"))
+		data->menu_file = "./sprites_xpm/y_right.xpm";
+	else if (x > 170 && x < 185 && y > 245 && y < 260 && strcmp(data->menu_file, "./sprites_xpm/y_left.xpm"))
+		data->menu_file = "./sprites_xpm/y_left.xpm";
+	else if (x > 215 && x < 230 && y > 278 && y < 293 && strcmp(data->menu_file, "./sprites_xpm/z_right.xpm"))
+		data->menu_file = "./sprites_xpm/z_right.xpm";
+	else if (x > 170 && x < 185 && y > 278 && y < 293 && strcmp(data->menu_file, "./sprites_xpm/z_left.xpm"))
+		data->menu_file = "./sprites_xpm/z_left.xpm";
+	else if (x > 215 && x < 230 && y > 370 && y < 385 && strcmp(data->menu_file, "./sprites_xpm/zoom_right.xpm"))
+		data->menu_file = "./sprites_xpm/zoom_right.xpm";
+	else if (x > 170 && x < 185 && y > 370 && y < 385 && strcmp(data->menu_file, "./sprites_xpm/zoom_left.xpm"))
+		data->menu_file = "./sprites_xpm/zoom_left.xpm";
+	else if (x > 215 && x < 230 && y > 461 && y < 476 && strcmp(data->menu_file, "./sprites_xpm/height_right.xpm"))
+		data->menu_file = "./sprites_xpm/height_right.xpm";
+	else if (x > 170 && x < 185 && y > 461 && y < 476 && strcmp(data->menu_file, "./sprites_xpm/height_left.xpm"))
+		data->menu_file = "./sprites_xpm/height_left.xpm";
+	else if (x > 215 && x < 230 && y > 496 && y < 511 && strcmp(data->menu_file, "./sprites_xpm/move_x_right.xpm"))
+		data->menu_file = "./sprites_xpm/move_x_right.xpm";
+	else if (x > 170 && x < 185 && y > 496 && y < 511 && strcmp(data->menu_file, "./sprites_xpm/move_x_left.xpm"))
+		data->menu_file = "./sprites_xpm/move_x_left.xpm";
+	else if (x > 215 && x < 230 && y > 529 && y < 544 && strcmp(data->menu_file, "./sprites_xpm/move_y_right.xpm"))
+		data->menu_file = "./sprites_xpm/move_y_right.xpm";
+	else if (x > 170 && x < 185 && y > 529 && y < 544 && strcmp(data->menu_file, "./sprites_xpm/move_y_left.xpm"))
+		data->menu_file = "./sprites_xpm/move_y_left.xpm";
+	else if (x > 60 && x < 170 && y > 725 && y < 765 && strcmp(data->menu_file, "./sprites_xpm/menu_reset.xpm"))
+		data->menu_file = "./sprites_xpm/menu_reset.xpm";
+	else if (x > 60 && x < 170 && y > 775 && y < 805 && strcmp(data->menu_file, "./sprites_xpm/menu_exit.xpm"))
+		data->menu_file = "./sprites_xpm/menu_exit.xpm";
+	else if (strcmp(data->menu_file, "./sprites_xpm/menu.xpm"))
 	{
 		if ((check_if_between(60, 170, x) && (check_if_between(725, 765, y) || check_if_between(775, 805, y))) 
 		|| ((check_if_between(170, 185, x) || check_if_between(215, 230, x)) && 
@@ -76,7 +76,7 @@ int	handle_mouse_move(int x, int y, t_data *data)
 		|| check_if_between(370, 385, y) || check_if_between(461, 476, y) || check_if_between(496, 511, y) 
 		|| check_if_between(529, 544, y))))
 			return (0);
-		data->menu = "./sprites_xpm/menu.xpm";
+		data->menu_file = "./sprites_xpm/menu.xpm";
 	}
 	else
 		return (0);
@@ -88,10 +88,57 @@ int	handle_mouse_move(int x, int y, t_data *data)
 	return (0);
 }
 
+int	handle_entry_mouse_move(int x, int y, t_data *data)
+{
+	if (x > 790 && x < 1128 && y > 750 && y < 820 && strcmp(data->menu_entry_file, "./sprites_xpm/menu_start_exit.xpm"))
+		data->menu_entry_file = "./sprites_xpm/menu_start_exit.xpm";
+	else if (x > 790 && x < 1128 && y > 650 && y < 712 && strcmp(data->menu_entry_file, "./sprites_xpm/menu_start_choose.xpm"))
+		data->menu_entry_file = "./sprites_xpm/menu_start_choose.xpm";
+	else if (strcmp(data->menu_entry_file, "./sprites_xpm/menu_start.xpm"))
+	{
+		if (check_if_between(790, 1128, x) && (check_if_between(750, 820, y) || check_if_between(650, 712, y)))
+			return (0);
+		data->menu_entry_file = "./sprites_xpm/menu_start.xpm";
+	}
+	else
+		return (0);
+	mlx_destroy_image(data->mlx_ptr, data->entry_img);
+	render_menu(data);
+	return (0);
+}
+
+int	handle_choose_map_mouse_move(int x, int y, t_data *data)
+{
+	if (x > 790 && x < 1128 && y > 868 && y < 933 && strcmp(data->choose_file, "./sprites_xpm/choose_map_back.xpm"))
+		data->choose_file = "./sprites_xpm/choose_map_back.xpm";
+	else if (x > 300 && x < 637 && y > 250 && y < 310 && strcmp(data->choose_file, "./sprites_xpm/42_map.xpm"))
+		data->choose_file = "./sprites_xpm/42_map.xpm";
+	else if (x > 690 && x < 1025 && y > 250 && y < 310 && strcmp(data->choose_file, "./sprites_xpm/t1_map.xpm"))
+		data->choose_file = "./sprites_xpm/t1_map.xpm";
+	else if (strcmp(data->choose_file, "./sprites_xpm/choose_map.xpm"))
+	{
+		if((check_if_between(790, 1128, x) && check_if_between(868, 933, y)) || 
+		((check_if_between(300, 637, x) || check_if_between(690, 1025, x)) && check_if_between(250, 310, y)))
+			return (0);
+		data->choose_file = "./sprites_xpm/choose_map.xpm";
+	}
+	else
+		return (0);
+	mlx_destroy_image(data->mlx_ptr, data->choose_img);
+	render_choose_menu(data);
+	return (0);
+}
+
 int	handle_mouse_down(int button, int x, int y, t_data *data)
 {
 	if (x > 60 && x < 170 && y > 775 && y < 805 && button == 1)
-		handle_close(data);
+	{
+		free_info(data);
+		ft_free_map(data);
+		data->menu_entry_file = "./sprites_xpm/menu_start.xpm";
+		data->choose_file = "./sprites_xpm/choose_map.xpm";
+		open_window(data);
+	}
 	else if (button == 1 && x > 215 && x < 230 && y > 210 && y < 225)
 	{
 		free_info(data);
@@ -263,6 +310,61 @@ int	handle_mouse_down(int button, int x, int y, t_data *data)
 	return (0);
 }
 
+int	handle_entry_mouse_down(int button, int x, int y, t_data *data)
+{
+	if (x > 790 && x < 1128 && y > 750 && y < 820 && button == 1)
+	{
+		mlx_clear_window(data->mlx_ptr, data->win_ptr);
+		mlx_destroy_image(data->mlx_ptr, data->entry_img);
+		mlx_destroy_window(data->mlx_ptr, data->win_ptr);
+		data->win_ptr = NULL;
+		mlx_destroy_display(data->mlx_ptr);
+		free (data->mlx_ptr);
+		exit(1);
+	}
+	else if (x > 790 && x < 1128 && y > 650 && y < 712 && button == 1)
+	{
+		mlx_clear_window(data->mlx_ptr, data->win_ptr);
+		mlx_destroy_image(data->mlx_ptr, data->entry_img);
+		render_choose_menu(data);
+		mlx_hook(data->win_ptr, DestroyNotify, NoEventMask, &handle_menu_choose_close, data);
+		mlx_hook(data->win_ptr, 4, 1L << 2, &handle_choose_map_mouse_down, data);
+		mlx_hook(data->win_ptr, 5, 1L << 3, &handle_choose_map_mouse_up, data);
+		mlx_hook(data->win_ptr, 6, 1L << 6, &handle_choose_map_mouse_move, data);
+		mlx_loop(data->mlx_ptr);
+	}
+	return (0);
+}
+
+int	handle_choose_map_mouse_down(int button, int x, int y, t_data *data)
+{
+	if (x > 790 && x < 1128 && y > 868 && y < 933 && button == 1)
+	{
+		mlx_clear_window(data->mlx_ptr, data->win_ptr);
+		mlx_destroy_image(data->mlx_ptr, data->choose_img);
+		data->menu_entry_file = "./sprites_xpm/menu_start.xpm";
+		data->choose_file = "./sprites_xpm/choose_map.xpm";
+		open_window(data);
+	}
+	else if (x > 690 && x < 1025 && y > 250 && y < 310)
+		data->map_to_render = "./maps/test_maps/t1.fdf";
+	else if (x > 300 && x < 637 && y > 250 && y < 310 && button == 1)
+		data->map_to_render = "./maps/test_maps/42.fdf";
+	else
+		return (0);
+	init_data(data);
+	mlx_clear_window(data->mlx_ptr, data->win_ptr);
+	mlx_destroy_image(data->mlx_ptr, data->choose_img);
+	render_map(data);
+	mlx_hook(data->win_ptr, KeyPress, KeyPressMask, &handle_keypress, data);
+	mlx_hook(data->win_ptr, DestroyNotify, NoEventMask, &handle_close, data);
+	mlx_hook(data->win_ptr, 4, 1L << 2, &handle_mouse_down, data);
+	mlx_hook(data->win_ptr, 5, 1L << 3, &handle_mouse_up, data);
+	mlx_hook(data->win_ptr, 6, 1L << 6, &handle_mouse_move, data);
+	mlx_loop(data->mlx_ptr);
+	return (0);
+}
+
 int	handle_mouse_up(int button, int x, int y, t_data *data)
 {
 	(void)x;
@@ -271,6 +373,25 @@ int	handle_mouse_up(int button, int x, int y, t_data *data)
 		data->button = 0;
 	return (0);
 }
+
+int	handle_entry_mouse_up(int button, int x, int y, t_data *data)
+{
+	(void)x;
+	(void)y;
+	if (button == 1 || button == 2 || button == 3)
+		data->button = 0;
+	return (0);
+}
+
+int	handle_choose_map_mouse_up(int button, int x, int y, t_data *data)
+{
+	(void)x;
+	(void)y;
+	if (button == 1 || button == 2 || button == 3)
+		data->button = 0;
+	return (0);
+}
+
 void	free_info(t_data *data)
 {
 	free(data->info.angle_x);

@@ -12,16 +12,11 @@
 
 #include "../fdf.h"
 
-int	main(int argc, char **argv)
+int	main(void)
 {
 	t_data	data;
 
-	if (argc == 2)
-	{
-		creat_map(argv[1], &data);
-		open_window(&data);
-	}
-	else
-		write(2, "Wrong format, please enter <./fdf ./path/file_map.fdf>\n", 55);
+	init_window(&data);
+	open_window(&data);
 	exit (0);
 }

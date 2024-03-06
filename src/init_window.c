@@ -12,19 +12,35 @@
 
 #include "../fdf.h"
 
-int	handle_entry_menu_keypress(int keysym, t_data *data);
-int	render_menu(t_data *data);
-
 void	open_window(t_data *data)
 {
-	init_window(data);
-	render_menu(data);
-	mlx_hook(data->win_ptr, KeyPress, KeyPressMask, &handle_entry_menu_keypress, data);
-	mlx_loop(data->mlx_ptr);
+		render_menu(data);
+		mlx_hook(data->win_ptr, DestroyNotify, NoEventMask, &handle_menu_close, data);
+		mlx_hook(data->win_ptr, 4, 1L << 2, &handle_entry_mouse_down, data);
+		mlx_hook(data->win_ptr, 5, 1L << 3, &handle_entry_mouse_up, data);
+		mlx_hook(data->win_ptr, 6, 1L << 6, &handle_entry_mouse_move, data);
+		mlx_loop(data->mlx_ptr);
 }
 
 int	init_window(t_data *data)
 {
+	data->mlx_ptr = mlx_init();
+	if (!data->mlx_ptr)
+		exit (1);
+	data->win_ptr = mlx_new_window(data->mlx_ptr, WIDTH, HEIGHT, "FdF");
+	if (!data->win_ptr)
+	{
+		free(data->win_ptr);
+		exit (2);
+	}
+	data->menu_entry_file = "./sprites_xpm/menu_start.xpm";
+	data->choose_file = "./sprites_xpm/choose_map.xpm";
+	return (1);
+}
+
+void	init_data(t_data *data)
+{
+	creat_map(data->map_to_render, data);
 	data->zoom = 20;
 	data->hor = (WIDTH - 200) / 2;
 	data->hey = HEIGHT / 2;
@@ -36,48 +52,9 @@ int	init_window(t_data *data)
 	data->color_save = 0;
 	data->add_color = 1;
 	data->render_status = 1;
-	data->menu = "./sprites_xpm/menu.xpm";
+	data->menu_file = "./sprites_xpm/menu.xpm";
 	get_max_z(data);
 	get_min_z(data);
-	data->mlx_ptr = mlx_init();
-	if (!data->mlx_ptr)
-		exit (1);
-	data->win_ptr = mlx_new_window(data->mlx_ptr, WIDTH, HEIGHT, "FdF");
-	if (!data->win_ptr)
-	{
-		free(data->win_ptr);
-		exit (2);
-	}
-	return (1);
-}
-
-int	handle_entry_menu_keypress(int keysym, t_data *data)
-{
-	if (keysym == XK_Escape)
-	{
-		mlx_destroy_image(data->mlx_ptr, data->entry_img);
-		mlx_destroy_window(data->mlx_ptr, data->win_ptr);
-		data->win_ptr = NULL;
-		mlx_destroy_display(data->mlx_ptr);
-		free (data->mlx_ptr);
-		ft_free_map(data);
-		exit(1);
-	}
-	else if (keysym)
-	{
-		mlx_clear_window(data->mlx_ptr, data->win_ptr);
-		mlx_destroy_image(data->mlx_ptr, data->entry_img);
-		render_map(data);
-		mlx_hook(data->win_ptr, KeyPress, KeyPressMask, &handle_keypress, data);
-		mlx_hook(data->win_ptr, DestroyNotify, NoEventMask, &handle_close, data);
-		mlx_hook(data->win_ptr, 4, 1L << 2, &handle_mouse_down, data);
-		mlx_hook(data->win_ptr, 5, 1L << 3, &handle_mouse_up, data);
-		mlx_hook(data->win_ptr, 6, 1L << 6, &handle_mouse_move, data);
-		mlx_loop(data->mlx_ptr);
-		mlx_destroy_display(data->mlx_ptr);
-		free (data->mlx_ptr);
-	}
-	return (1);
 }
 
 int	render_menu(t_data *data)
@@ -85,7 +62,17 @@ int	render_menu(t_data *data)
 	int x;
 	int y;
 
-	data->entry_img = mlx_xpm_file_to_image(data->mlx_ptr, "./sprites_xpm/jorge_gay.xpm", &x, &y);
+	data->entry_img = mlx_xpm_file_to_image(data->mlx_ptr, data->menu_entry_file, &x, &y);
 	mlx_put_image_to_window(data->mlx_ptr, data->win_ptr, data->entry_img, 0, 0);
+	return (1);
+}
+
+int	render_choose_menu(t_data *data)
+{
+	int x;
+	int y;
+
+	data->choose_img = mlx_xpm_file_to_image(data->mlx_ptr, data->choose_file, &x, &y);
+	mlx_put_image_to_window(data->mlx_ptr, data->win_ptr, data->choose_img, 0, 0);
 	return (1);
 }

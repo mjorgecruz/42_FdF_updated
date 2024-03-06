@@ -14,9 +14,7 @@
 
 int	handle_keypress(int keysym, t_data *data)
 {
-	if (keysym == XK_Escape)
-		handle_close(data);
-	else if (keysym == XK_Right || keysym == XK_Left || \
+	if (keysym == XK_Right || keysym == XK_Left || \
 	keysym == XK_Up || keysym == XK_Down || keysym == XK_r)
 		move_handle(keysym, data);
 	else if (keysym == XK_q || keysym == XK_w || keysym == XK_a \
@@ -52,6 +50,26 @@ int	handle_close(t_data *data)
 	ft_free_map(data);
 	exit(1);
 	return (0);
+}
+
+int	handle_menu_close(t_data *data)
+{
+	mlx_destroy_image(data->mlx_ptr, data->entry_img);
+	mlx_destroy_window(data->mlx_ptr, data->win_ptr);
+	data->win_ptr = NULL;
+	mlx_destroy_display(data->mlx_ptr);
+	free (data->mlx_ptr);
+	exit(1);
+}
+
+int	handle_menu_choose_close(t_data *data)
+{
+	mlx_destroy_image(data->mlx_ptr, data->choose_img);
+	mlx_destroy_window(data->mlx_ptr, data->win_ptr);
+	data->win_ptr = NULL;
+	mlx_destroy_display(data->mlx_ptr);
+	free (data->mlx_ptr);
+	exit(1);
 }
 
 int	increase_z(t_data *data)
