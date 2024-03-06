@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   diff_colors.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ruiolive <ruiolive@student.42.fr>          +#+  +:+       +#+        */
+/*   By: masoares <masoares@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 11:46:17 by ruiolive          #+#    #+#             */
-/*   Updated: 2023/12/06 14:18:42 by ruiolive         ###   ########.fr       */
+/*   Updated: 2024/03/06 09:36:50 by masoares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ void	colors2(t_data *data)
 	red = 0;
 	green = 255;
 	blue = 0;
+
+	
 	if (blue < (255 - (data->min_z * data->z1 * data->add_color)))
 		blue -= data->min_z * data->z1 * data->add_color;
 	else 

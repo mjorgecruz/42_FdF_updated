@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotation.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ruiolive <ruiolive@student.42.fr>          +#+  +:+       +#+        */
+/*   By: masoares <masoares@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 09:42:07 by ruiolive          #+#    #+#             */
-/*   Updated: 2023/12/04 14:46:19 by ruiolive         ###   ########.fr       */
+/*   Updated: 2024/03/05 10:28:13 by masoares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	rotation(t_data *data, double *x1, double *y1)
 	rotate_x_axis(data, &data->v, &data->z);
 	rotate_x_axis(data, y1, &data->z1);
 }
+
 
 void	rotate_x_axis(t_data *data, double *y, float *z)
 {
@@ -50,3 +51,4 @@ void	rotate_z_axis(t_data *data, double *x, double *y)
 	*x = (save_x * cos(data->angle_z) - save_y * sin(data->angle_z));
 	*y = (save_x * sin(data->angle_z) + save_y * cos(data->angle_z));
 }
+
