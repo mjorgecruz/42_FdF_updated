@@ -81,7 +81,10 @@ int	handle_mouse_move(int x, int y, t_data *data)
 	else
 		return (0);
 	free_info(data);
-	render_map(data);
+	if (data->render_status == 2)
+		roid_render_map(data);
+	else
+		render_map(data);
 	return (0);
 }
 
@@ -93,87 +96,129 @@ int	handle_mouse_down(int button, int x, int y, t_data *data)
 	{
 		free_info(data);
 		data->angle_x += 0.1;
-		render_map(data);
+		if (data->render_status == 2)
+			roid_render_map(data);
+		else
+			render_map(data);
 	}
 	else if (button == 1 && x > 170 && x < 185 && y > 210 && y < 225)
 	{
 		free_info(data);
 		data->angle_x -= 0.1;
-		render_map(data);
+		if (data->render_status == 2)
+			roid_render_map(data);
+		else
+			render_map(data);
 	}
 	else if (button == 1 && x > 215 && x < 230 && y > 245 && y < 260)
 	{
 		free_info(data);
 		data->angle_y += 0.1;
-		render_map(data);
+		if (data->render_status == 2)
+			roid_render_map(data);
+		else
+			render_map(data);
 	}
 	else if (button == 1 && x > 170 && x < 185 && y > 245 && y < 260)
 	{
 		free_info(data);
 		data->angle_y -= 0.1;
-		render_map(data);
+		if (data->render_status == 2)
+			roid_render_map(data);
+		else
+			render_map(data);
 	}
 	else if (button == 1 && x > 215 && x < 230 && y > 278 && y < 293)
 	{
 		free_info(data);
 		data->angle_z += 0.1;
-		render_map(data);
+		if (data->render_status == 2)
+			roid_render_map(data);
+		else
+			render_map(data);
 	}
 	else if (button == 1 && x > 170 && x < 185 && y > 278 && y < 293)
 	{
 		free_info(data);
 		data->angle_z -= 0.1;
-		render_map(data);
+		if (data->render_status == 2)
+			roid_render_map(data);
+		else
+			render_map(data);
 	}
 	else if (button == 1 && x > 215 && x < 230 && y > 370 && y < 385)
 	{
 		free_info(data);
 		if (data->zoom < 150)
 			data->zoom *= 1.2;
-		render_map(data);
+		if (data->render_status == 2)
+			roid_render_map(data);
+		else
+			render_map(data);
 	}
 	else if (button == 1 && x > 170 && x < 185 && y > 370 && y < 385)
 	{
 		free_info(data);
 		if (data->zoom > 3)
 			data->zoom /= 1.2;
-		render_map(data);
+		if (data->render_status == 2)
+			roid_render_map(data);
+		else
+			render_map(data);
 	}
 	else if (button == 1 && x > 215 && x < 230 && y > 461 && y < 476)
 	{
 		free_info(data);
 		increase_z(data);
-		render_map(data);
+		if (data->render_status == 2)
+			roid_render_map(data);
+		else
+			render_map(data);
 	}
 	else if (button == 1 && x > 170 && x < 185 && y > 461 && y < 476)
 	{
 		free_info(data);
 		decrease_z(data);
-		render_map(data);
+		if (data->render_status == 2)
+			roid_render_map(data);
+		else
+			render_map(data);
 	}
 	else if (button == 1 && x > 215 && x < 230 && y > 496 && y < 511)
 	{
 		free_info(data);
 		data->hor += 5;
-		render_map(data);
+		if (data->render_status == 2)
+			roid_render_map(data);
+		else
+			render_map(data);
 	}
 	else if (button == 1 && x > 170 && x < 185 && y > 496 && y < 511)
 	{
 		free_info(data);
 		data->hor -= 5;
-		render_map(data);
+		if (data->render_status == 2)
+			roid_render_map(data);
+		else
+			render_map(data);
 	}
 	else if (button == 1 && x > 215 && x < 230 && y > 529 && y < 544)
 	{
 		free_info(data);
 		data->hey += 5;
-		render_map(data);
+		if (data->render_status == 2)
+			roid_render_map(data);
+		else
+			render_map(data);
 	}
 	else if (button == 1 && x > 170 && x < 185 && y > 529 && y < 544)
 	{
 		free_info(data);
 		data->hey -= 5;
-		render_map(data);
+		if (data->render_status == 2)
+			roid_render_map(data);
+		else
+			render_map(data);
 	}
 	else if (button == 1 && x > 60 && x < 170 && y > 725 && y < 765)
 	{
@@ -184,21 +229,30 @@ int	handle_mouse_down(int button, int x, int y, t_data *data)
 		data->angle_x = 0.567890;
 		data->angle_y = -0.012300;
 		data->angle_z = 0.743534;
-		render_map(data);
+		if (data->render_status == 2)
+			roid_render_map(data);
+		else
+			render_map(data);
 	}
 	else if (button == 4 && x > 235)
 	{
 		if (data->zoom < 150)
 			data->zoom *= 1.5;
 		free_info(data);
-		render_map(data);
+		if (data->render_status == 2)
+			roid_render_map(data);
+		else
+			render_map(data);
 	}
 	else if (button == 5 && x > 235)
 	{
 		if (data->zoom > 3)
 			data->zoom /= 1.5;
 		free_info(data);
-		render_map(data);
+		if (data->render_status == 2)
+			roid_render_map(data);
+		else
+			render_map(data);
 	}
 	else if (button == 1 || button == 2 || button == 3)
 	{

@@ -12,22 +12,13 @@
 
 #include "../fdf.h"
 
-void	roid_open_window(t_data *data)
-{
-	init_window(data);
-	roid_render_map(data);
-	mlx_hook(data->win_ptr, KeyPress, KeyPressMask, &roid_handle_keypress, data);
-	mlx_hook(data->win_ptr, DestroyNotify, NoEventMask, &handle_close, data);
-	mlx_hook(data->win_ptr, 4, 1L << 2, &roid_handle_mouse_down, data);
-	mlx_hook(data->win_ptr, 5, 1L << 3, &handle_mouse_up, data);
-	mlx_hook(data->win_ptr, 6, 1L << 6, &roid_handle_mouse_move, data);
-	mlx_loop(data->mlx_ptr);
-	mlx_destroy_display(data->mlx_ptr);
-	free (data->mlx_ptr);
-}
 int	roid_render_map(t_data *data)
 {
-	data->img.mlx_img = mlx_new_image(data->mlx_ptr, WIDTH - 200, HEIGHT);
+	int	x;
+	int	y;
+
+	data->menu_img = mlx_xpm_file_to_image(data->mlx_ptr, data->menu, &x, &y);
+	data->img.mlx_img = mlx_new_image(data->mlx_ptr, WIDTH - 235, HEIGHT);
 	data->img.addr = mlx_get_data_addr(data->img.mlx_img, &data->img.bpp, \
 	&data->img.line_len, &data->img.endian);
 	data->y = data->height / 2 * -1;
@@ -39,8 +30,9 @@ int	roid_render_map(t_data *data)
 		roid_map_misto1(data);
 	else
 		roid_map_misto2(data);
+	mlx_put_image_to_window(data->mlx_ptr, data->win_ptr, data->menu_img, 0, 0);
 	mlx_put_image_to_window(data->mlx_ptr, data->win_ptr, \
-	data->img.mlx_img, 200, 0);
+	data->img.mlx_img, 235, 0);
 	menu_render(data);
 	return (0);
 }

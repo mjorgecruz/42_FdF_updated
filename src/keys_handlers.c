@@ -67,24 +67,28 @@ int	projection_handle(int keysym, t_data *data)
 		data->angle_x = 0.567890;
 		data->angle_y = -0.012300;
 		data->angle_z = 0.743534;
+		data->render_status = 1;
 	}
 	else if (keysym == XK_2)
 	{
 		data->angle_x = 0.067890;
 		data->angle_y = 0;
 		data->angle_z = 0;
+		data->render_status = 1;
 	}
 	else if (keysym == XK_3)
 	{
 		data->angle_x = 0;
 		data->angle_y = 0;
 		data->angle_z = 0;
+		data->render_status = 1;
 	}
 	else if (keysym == XK_4)
 	{
 		data->angle_x = 7.853906;
 		data->angle_y = 0;
 		data->angle_z = 0;
+		data->render_status = 1;
 	}
 	return (0);
 }
