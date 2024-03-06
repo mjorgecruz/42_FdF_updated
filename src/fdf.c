@@ -19,7 +19,7 @@ int	main(int argc, char **argv)
 	if (argc == 2)
 	{
 		creat_map(argv[1], &data);
-		roid_open_window(&data);
+		open_window(&data);
 	}
 	else
 		write(2, "Wrong format, please enter <./fdf ./path/file_map.fdf>\n", 55);

@@ -82,6 +82,8 @@ typedef struct s_data
 	int		y;
 	int		prev_x;
 	int		prev_y;
+	int		render_status;
+	char	*entry_img;
 	char	*menu_img;
 	char	*menu;
 	t_info	info;
@@ -196,7 +198,6 @@ void ftoa(float n, char* res, int afterpoint) ;
 //       Roid_functions      //
 ///////////////////////////////
 
-void	roid_open_window(t_data *data);
 int		roid_render_map(t_data *data);
 void	roid_map_par(t_data *data);
 void	roid_map_impar(t_data *data);
