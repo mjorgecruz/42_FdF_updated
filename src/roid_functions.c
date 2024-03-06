@@ -6,7 +6,7 @@
 /*   By: masoares <masoares@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 10:11:05 by masoares          #+#    #+#             */
-/*   Updated: 2024/03/06 00:21:28 by masoares         ###   ########.fr       */
+/*   Updated: 2024/03/06 12:31:06 by masoares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,6 +146,186 @@ void	roid_bresenham(t_data *data, double x1, double y1)
 	}
 }
 
+// void	roid_bresenham_colour(t_data *data, double x1, double y1)
+// {
+// 	int z_point;
+// 	double z_step;
+// 	data->u = data->x;
+// 	data->v = data->y;
+// 	data->z = data->map[data->y + (data->height / 2)] 
+// 	[data->x + (data->width / 2)].z;
+// 	data->z1 = data->map[(int)y1 + (data->height / 2)] 
+// 	[(int)x1 + (data->width / 2)].z;
+// 	data->color_default = data->map[data->y + (data->height / 2)] 
+// 	[data->x + (data->width / 2)].color;
+// 	roid_rotation(data, &x1, &y1);
+// 	zoom(&x1, &y1, data);
+// 	map_move(&x1, &y1, data);
+// 	data->x_step = x1 - data->u;
+// 	data->y_step = y1 - data->v;
+// 	data->max = max_step(positive(data->x_step), positive(data->y_step));
+// 	data->x_step /= data->max;
+// 	data->y_step /= data->max;
+// 	z_point = data->z;
+// 	z_step = (data->z1 - data->z) / positive((x1 - data->u) / data->x_step);
+// 	while ((int)(data->u - x1) || (int)(data->v - y1))
+// 	{
+// 		int color;
+// 		color = 0;
+// 		if (data->color_save > 1)
+// 			color = roid_color(data, z_point);
+// 		roid_build_img(data, color);
+// 		z_point += z_step;
+// 		data->u += data->x_step;
+// 		data->v += data->y_step;
+// 	}
+// }
+
+// int roid_color(t_data *data, double z_point)
+// {
+// 	int color;
+// 	if (data->color_save == 2)
+// 	{
+// 		if (z_point > 0)
+// 			color = roid_colors_above_2(data, z_point);
+// 		if (z_point < 0)
+// 			color = roid_colors_above_2(data, z_point);
+// 	}
+// 	return(color);
+// }
+// int	roid_colors_above_2(t_data *data, double z_point)
+// {
+// 	int	red;
+// 	int	green;
+// 	int	blue;
+// 	(void) z_point;
+
+// 	red = 0;
+// 	green = 255;
+// 	blue = 0;
+// 	if (red < 240)
+// 	{
+// 		red += data->max_z * data->z1 * data->add_color;
+// 		red <<= 16;
+// 	}
+// 	else 
+// 		red = 255;
+// 	if (green > (data->max_z * 0.2 * data->z1 * data->add_color))
+// 	{
+// 		green -= data->max_z * 0.2 * data->z1 * data->add_color;
+// 		green <<= 8;
+// 	}
+// 	else
+// 		green = 0;
+// 	data->color_default = red + blue + green;
+// 	return (0);
+// }
+
+// int	roid_colors_below_2(t_data *data, double z_point)
+// {
+// 	int	red;
+// 	int	green;
+// 	int	blue;
+// 	(void) z_point;
+
+// 	red = 0;
+// 	green = 255;
+// 	blue = 0;
+
+	
+// 	if (blue < (255 - (data->min_z * data->z1 * data->add_color)))
+// 		blue -= data->min_z * data->z1 * data->add_color;
+// 	else 
+// 		blue = 255;
+// 	if (red < (255 - (data->min_z * 0.2 * data->z1 * data->add_color)))
+// 	{
+// 		red += data->min_z * 0.2 * data->z1 * data->add_color;
+// 		red <<= 16;
+// 	}
+// 	else
+// 		red = 255;
+// 	data->color_default = red + blue + green;
+// 	return (0);
+// }
+
+// int	roid_colors_above_3(t_data *data, double z_point)
+// {
+// 	int	red;
+// 	int	green;
+// 	int	blue;
+// 	(void) z_point;
+
+// 	red = 0;
+// 	green = 255;
+// 	blue = 100;
+// 	if (red < 240)
+// 	{
+// 		red += data->max_z * data->z1 * data->add_color;
+// 		red <<= 16;
+// 	}
+// 	else 
+// 		red = 255;
+// 	if (green > (data->max_z * 0.2 * data->z1 * data->add_color))
+// 	{
+// 		green -= data->max_z * 0.2 * data->z1 * data->add_color;
+// 		green <<= 8;
+// 	}
+// 	else
+// 		green = 0;
+// 	data->color_default = red + blue + green;
+
+// 	return(0);
+// }
+
+// int	roid_colors_below_3(t_data *data, double z_point)
+// {
+// 	int	red;
+// 	int	green;
+// 	int	blue;
+// 	(void) z_point;
+
+// 	red = 100;
+// 	green = 255;
+// 	blue = 0;
+// 	if (blue < 255)
+// 		blue -= data->min_z * data->z1 * data->add_color;
+// 	else 
+// 		blue = 255;
+// 	if (red < (255 - (data->min_z * 0.2 * data->z1 * data->add_color)))
+// 	{
+// 		red += data->min_z * 0.2 * data->z1 * data->add_color;
+// 		red <<= 16;
+// 	}
+// 	else
+// 		red = 255;
+// 	data->color_default = red + blue + green;
+// 	return(0);
+// }
+
+// int	roid_build_img(t_data *data, int color)
+// {
+// 	char	*ptr;
+
+// 	ptr = NULL;
+// 	if (data->u < (WIDTH - 200) && data->u >= 0 
+// 	&& data->v < (HEIGHT) && data->v >= 0)
+// 	{
+// 		if (color == 0)
+// 		{
+// 			ptr = data->img.addr + (int)data->u * (data->img.bpp / 8) 
+// 			+ ((int)data->v * data->img.line_len);
+// 			*(unsigned int *)ptr = data->color_default;
+// 		}
+// 		else
+// 		{
+// 			ptr = data->img.addr + (int)data->u * (data->img.bpp / 8) 
+// 			+ ((int)data->v * data->img.line_len);
+// 			*(unsigned int *)ptr = color;
+// 		}
+// 	}
+// 	return (0);
+// }
+
 void	roid_bresenham_surfaces(t_data *data, double x1, double y1)
 {
 	//(x1, y1) = (x+1, y+1)
@@ -181,11 +361,15 @@ int	roid_rotation(t_data *data, double *x1, double *y1)
 	double	latitude1;
 	double	longitude1;
 	double	R;
+	double	max_z;
+	double adj_z;
+
+	max_z = (double) data->max_z;
+	adj_z = max_z / 6.28;
 	
 	R = (data->width -1) /(6.28);
 	longitude = (data->x)/ (R);
 	latitude = -3.14/data->height * data->y;
-	
 	longitude1 = (*x1)/ R;
 	latitude1 = -3.14/data->height * (*y1);
 	if (data->y == (data->height/2))
@@ -196,12 +380,12 @@ int	roid_rotation(t_data *data, double *x1, double *y1)
 		latitude1 = -3.1/2;
 	else if ((*y1) == -(data->height/2))
 		latitude1 = 3.1/2;
-	data->v = (R + data->z/100)* cos(latitude) *cos(longitude);
-	data->u = (R + data->z/100) * cos(latitude) *sin(longitude);
-	data->z = (R + data->z/100) * sin(latitude);
-	*y1= (R + data->z1/100) * cos(latitude1) *cos(longitude1);
-	*x1 = (R + data->z1/100) * cos(latitude1) *sin(longitude1);
-	data->z1 = (R + data->z1/100) * sin(latitude1);
+	data->v = (R + data->z/adj_z)* cos(latitude) *cos(longitude);
+	data->u = (R + data->z/adj_z) * cos(latitude) *sin(longitude);
+	data->z = (R + data->z/adj_z) * sin(latitude);
+	*y1= (R + data->z1/adj_z) * cos(latitude1) *cos(longitude1);
+	*x1 = (R + data->z1/adj_z) * cos(latitude1) *sin(longitude1);
+	data->z1 = (R + data->z1/adj_z) * sin(latitude1);
 	rotate_y_axis(data, &data->u, &data->z);
 	rotate_y_axis(data, x1, &data->z1);
 	rotate_z_axis(data, &data->u, &data->v);
