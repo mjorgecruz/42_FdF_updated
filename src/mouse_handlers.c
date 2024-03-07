@@ -112,14 +112,27 @@ int	handle_choose_map_mouse_move(int x, int y, t_data *data)
 {
 	if (x > 790 && x < 1128 && y > 868 && y < 933 && strcmp(data->choose_file, "./sprites_xpm/choose_map_back.xpm"))
 		data->choose_file = "./sprites_xpm/choose_map_back.xpm";
-	else if (x > 300 && x < 637 && y > 250 && y < 310 && strcmp(data->choose_file, "./sprites_xpm/42_map.xpm"))
+	else if (x > 145 && x < 480 && y > 373 && y < 432 && strcmp(data->choose_file, "./sprites_xpm/42_map.xpm"))
 		data->choose_file = "./sprites_xpm/42_map.xpm";
-	else if (x > 690 && x < 1025 && y > 250 && y < 310 && strcmp(data->choose_file, "./sprites_xpm/t1_map.xpm"))
+	else if (x > 585 && x < 920 && y > 373 && y < 432 && strcmp(data->choose_file, "./sprites_xpm/t1_map.xpm"))
 		data->choose_file = "./sprites_xpm/t1_map.xpm";
+	else if (x > 1025 && x < 1360 && y > 373 && y < 432 && strcmp(data->choose_file, "./sprites_xpm/t2_map.xpm"))
+		data->choose_file = "./sprites_xpm/t2_map.xpm";
+	else if (x > 1465 && x < 1800 && y > 373 && y < 432 && strcmp(data->choose_file, "./sprites_xpm/pyramid_map.xpm"))
+		data->choose_file = "./sprites_xpm/pyramid_map.xpm";
+	else if (x > 145 && x < 480 && y > 513 && y < 572 && strcmp(data->choose_file, "./sprites_xpm/fractal_map.xpm"))
+		data->choose_file = "./sprites_xpm/fractal_map.xpm";
+	else if (x > 585 && x < 920 && y > 513 && y < 572 && strcmp(data->choose_file, "./sprites_xpm/world_map.xpm"))
+		data->choose_file = "./sprites_xpm/world_map.xpm";
+	else if (x > 1025 && x < 1360 && y > 513 && y < 572 && strcmp(data->choose_file, "./sprites_xpm/julia_map.xpm"))
+		data->choose_file = "./sprites_xpm/julia_map.xpm";
+	else if (x > 1465 && x < 1800 && y > 513 && y < 572 && strcmp(data->choose_file, "./sprites_xpm/mars_map.xpm"))
+		data->choose_file = "./sprites_xpm/mars_map.xpm";
 	else if (strcmp(data->choose_file, "./sprites_xpm/choose_map.xpm"))
 	{
 		if((check_if_between(790, 1128, x) && check_if_between(868, 933, y)) || 
-		((check_if_between(300, 637, x) || check_if_between(690, 1025, x)) && check_if_between(250, 310, y)))
+		((check_if_between(145, 480, x) || check_if_between(585, 920, x) || check_if_between(1025, 1360, x) || check_if_between(1465, 1800, x)) 
+		&& (check_if_between(373, 432, y) || check_if_between(513, 572, y))))
 			return (0);
 		data->choose_file = "./sprites_xpm/choose_map.xpm";
 	}
@@ -344,10 +357,22 @@ int	handle_choose_map_mouse_down(int button, int x, int y, t_data *data)
 		data->choose_file = "./sprites_xpm/choose_map.xpm";
 		open_window(data);
 	}
-	else if (x > 690 && x < 1025 && y > 250 && y < 310)
-		data->map_to_render = "./maps/test_maps/t1.fdf";
-	else if (x > 300 && x < 637 && y > 250 && y < 310 && button == 1)
-		data->map_to_render = "./maps/test_maps/42.fdf";
+	else if (x > 145 && x < 480 && y > 373 && y < 432 && button == 1)
+		data->map_to_render = "./maps/42.fdf";
+	else if (x > 585 && x < 920 && y > 373 && y < 432 && button == 1)
+		data->map_to_render = "./maps/t1.fdf";
+	else if (x > 1025 && x < 1360 && y > 373 && y < 432 && button == 1)
+		data->map_to_render = "./maps/t2.fdf";
+	else if (x > 1465 && x < 1800 && y > 373 && y < 432 && button == 1)
+		data->map_to_render = "./maps/pyramide.fdf";
+	else if (x > 145 && x < 480 && y > 513 && y < 572 && button == 1)
+		data->map_to_render = "./maps/fractal.fdf";
+	else if (x > 585 && x < 920 && y > 513 && y < 572 && button == 1)
+		data->map_to_render = "./maps/world.fdf";
+	else if (x > 1025 && x < 1360 && y > 513 && y < 572 && button == 1)
+		data->map_to_render = "./maps/julia.fdf";
+	else if (x > 1465 && x < 1800 && y > 513 && y < 572 && button == 1)
+		data->map_to_render = "./maps/mars.fdf";
 	else
 		return (0);
 	init_data(data);
