@@ -6,7 +6,7 @@
 /*   By: masoares <masoares@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 10:11:05 by masoares          #+#    #+#             */
-/*   Updated: 2024/03/07 11:56:41 by masoares         ###   ########.fr       */
+/*   Updated: 2024/03/07 12:22:30 by masoares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -185,6 +185,20 @@ int roid_color(t_data *data, double z_point)
 		if (z_point < 0)
 			color = roid_colors_below_2(data, z_point);
 	}
+	if (data->color_save == 3)
+	{
+		if (z_point >= 0)
+			color = roid_colors_above_3(data, z_point);
+		if (z_point < 0)
+			color = roid_colors_below_3(data, z_point);
+	}
+	// if (data->color_save == 4)
+	// {
+	// 	if (z_point >= 0)
+	// 		color = roid_colors_above_4(data, z_point);
+	// 	if (z_point < 0)
+	// 		color = roid_colors_below_4(data, z_point);
+	//}
 	return(color);
 }
 int	roid_colors_above_2(t_data *data, double z_point)
@@ -707,7 +721,257 @@ int	roid_colors_below_3(t_data *data, double z_point)
 	}
 	return(0);
 }
+int	roid_colors_above_4(t_data *data, double z_point)
+{
+	int		red;
+	int		green;
+	int		blue;
+	int	r;
+	int	g;
+	int	b;
+	double	range;
+	double	cur_max_z;
+	double	cur_min_z;
+	int		color;
 
+	red = 86;
+	green = 0;
+	blue = 0;
+	range = data->max_z / 8;
+	cur_max_z = range;
+	cur_min_z = 0;
+
+	if (z_point >= cur_min_z && z_point < cur_max_z)
+	{
+		r = 86 + (((117 - 86) / range) * (z_point - cur_min_z));
+		g = 0 + (((33 - 0) / range) * (z_point - cur_min_z));
+		b = 0 + ((8 - 0) / range) * (z_point - cur_min_z);
+		red = 0x00000000 + (r << 16);
+		green = 0x00000000 + (g << 8);
+		blue = 0x00000000 + b;
+		color = red + green + blue;
+		return (color);
+	}
+	cur_min_z = cur_max_z;
+	cur_max_z += range;
+	if (z_point >= cur_min_z && z_point < cur_max_z)
+	{
+		r = 117 + (((149 - 117) / range) * (z_point - cur_min_z));
+		g = 33 + ((60 - 33) / range) * (z_point - cur_min_z);
+		b =  8 + ((7 - 8) / range) * (z_point - cur_min_z);
+		red = 0x00000000 + (r << 16);
+		green = 0x00000000 + (g << 8);
+		blue = 0x00000000 + (b);
+		color = red + green + blue;
+		return (color);
+	}
+	cur_min_z = cur_max_z;
+	cur_max_z += range;
+	if (z_point >= cur_min_z && z_point < cur_max_z)
+	{
+		r = 149 + (((182 - 149) / range) * (z_point - cur_min_z));
+		g = 60 + ((88 - 60) / range) * (z_point - cur_min_z);
+		b =  7 + ((4 - 7) / range) * (z_point - cur_min_z);
+		red = 0x00000000 + (r << 16);
+		green = 0x00000000 + (g << 8);
+		blue = 0x00000000 + (b);
+		color = red + green + blue;
+		return (color);
+	}
+	cur_min_z = cur_max_z;
+	cur_max_z += range;
+	if (z_point >= cur_min_z && z_point < cur_max_z)
+	{
+		r = 182 + (((208 - 182) / range) * (z_point - cur_min_z));
+		g = 88 + ((118 - 88) / range) * (z_point - cur_min_z);
+		b =  4 + ((25 - 4) / range) * (z_point - cur_min_z);
+		red = 0x00000000 + (r << 16);
+		green = 0x00000000 + (g << 8);
+		blue = 0x00000000 + (b);
+		color = red + green + blue;
+		return (color);
+	}
+	cur_min_z = cur_max_z;
+	cur_max_z += range;
+	if (z_point >= cur_min_z && z_point < cur_max_z)
+	{
+		r = 208 + (((225 - 208) / range) * (z_point - cur_min_z));
+		g = 118 + ((149 - 118) / range) * (z_point - cur_min_z);
+		b =  25 + ((59 - 25) / range) * (z_point - cur_min_z);
+		red = 0x00000000 + (r << 16);
+		green = 0x00000000 + (g << 8);
+		blue = 0x00000000 + (b);
+		color = red + green + blue;
+		return (color);
+	}
+	cur_min_z = cur_max_z;
+	cur_max_z += range;
+	if (z_point >= cur_min_z && z_point < cur_max_z)
+	{
+		r = 225 + (((241 - 225) / range) * (z_point - cur_min_z));
+		g = 149 + ((181 - 149) / range) * (z_point - cur_min_z);
+		b =  59 + ((90 - 59) / range) * (z_point - cur_min_z);
+		red = 0x00000000 + (r << 16);
+		green = 0x00000000 + (g << 8);
+		blue = 0x00000000 + (b);
+		color = red + green + blue;
+		return (color);
+	}
+	cur_min_z = cur_max_z;
+	cur_max_z += range;
+	if (z_point >= cur_min_z && z_point < cur_max_z)
+	{
+		r = 241 + (((255 - 241) / range) * (z_point - cur_min_z));
+		g = 181 + ((213 - 181) / range) * (z_point - cur_min_z);
+		b =  90 + ((121 - 90) / range) * (z_point - cur_min_z);
+		red = 0x00000000 + (r << 16);
+		green = 0x00000000 + (g << 8);
+		blue = 0x00000000 + (b);
+		color = red + green + blue;
+		return (color);
+	}
+	cur_min_z = cur_max_z;
+	cur_max_z += range;
+	if (z_point >= cur_min_z && z_point < cur_max_z)
+	{
+		r = 255;
+		g = 214 + ((255 - 213) / range) * (z_point - cur_min_z);
+		b =  121 + ((255 - 121) / range) * (z_point - cur_min_z);
+		red = 0x00000000 + (r << 16);
+		green = 0x00000000 + (g << 8);
+		blue = 0x00000000 + (b);
+		color = red + green + blue;
+		return (color);
+	}
+
+	return(0);
+}
+
+int	roid_colors_below_4(t_data *data, double z_point)
+{
+		int		red;
+	int		green;
+	int		blue;
+	int	r;
+	int	g;
+	int	b;
+	double	range;
+	double	cur_max_z;
+	double	cur_min_z;
+	int		color;
+
+	red = 0;
+	green = 47;
+	blue = 50;
+	range = -data->min_z / 7;
+	cur_max_z = data->min_z + 1 * range;
+	cur_min_z = data->min_z;
+
+	if (z_point >= cur_min_z && z_point < cur_max_z)
+	{
+		r = 0;
+		g = 47 + (((93 - 47) / range) * (z_point - cur_min_z));
+		b =50 + (((96 - 50) / range) * (z_point - cur_min_z));
+		red = 0x00000000 + (r << 16);
+		green = 0x00000000 + (g << 8);
+		blue = 0x00000000 + b;
+		color = red + green + blue;
+		return (color);
+	}
+	cur_min_z = cur_max_z;
+	cur_max_z += range;
+	if (z_point >= cur_min_z && z_point < cur_max_z)
+	{
+		r = 0;
+		g = 93 + (((122 - 93) / range) * (z_point - cur_min_z));
+		b =96 + (((124 - 96) / range) * (z_point - cur_min_z));
+		red = 0x00000000 + (r << 16);
+		green = 0x00000000 + (g << 8);
+		blue = 0x00000000 + b;
+		color = red + green + blue;
+		return (color);
+	}
+	cur_min_z = cur_max_z;
+	cur_max_z += range;
+	if (z_point >= cur_min_z && z_point < cur_max_z)
+	{
+		r = 0;
+		g =122 + ((151 - 122) / range) * (z_point - cur_min_z);
+		b = 124 + ((153 - 124) / range) * (z_point - cur_min_z);
+		red = 0x00000000 + (r << 16);
+		green = 0x00000000 + (g << 8);
+		blue = 0x00000000 + (b);
+		color = red + green + blue;
+		return (color);
+	}
+	cur_min_z = cur_max_z;
+	cur_max_z += range;
+	if (z_point >= cur_min_z && z_point < cur_max_z)
+	{
+		r = 0;
+		g = 151 + (((182 - 151) / range) * (z_point - cur_min_z));
+		b = 153 + (((183 - 153) / range) * (z_point - cur_min_z));
+		red = 0x00000000 + (r <<16);
+		green = 0x00000000 + (g << 8);
+		blue = 0x00000000 +b;
+		color = red + green + blue;
+		return (color);
+	}
+	cur_min_z = cur_max_z;
+	cur_max_z += range;
+	if (z_point >= cur_min_z && z_point < cur_max_z)
+	{
+		r =0 +(((56 - 0) / range) * (z_point - cur_min_z));
+		g = 182 +(((206 - 182) / range) * (z_point - cur_min_z));
+		b = 183 +(((207 - 183) / range) * (z_point - cur_min_z));
+		red = 0x00000000 + (r <<16);
+		green = 0x00000000 + (g << 8);
+		blue = 0x00000000 +b;
+		color = red + green + blue;
+		return (color);
+	}
+	cur_min_z = cur_max_z;
+	cur_max_z += range;
+	if (z_point >= cur_min_z && z_point < cur_max_z)
+	{
+		r = 56 + (((104 - 56) / range) * (z_point - cur_min_z));
+		g =206 + (((222 - 206) / range) * (z_point - cur_min_z));
+		b = 207 + (((223 - 207) / range) * (z_point - cur_min_z));
+		red = 0x00000000 + (r <<16);
+		green = 0x00000000 + (g << 8);
+		blue = 0x00000000 +b;
+		color = red + green + blue;
+		return (color);
+	}
+	cur_min_z = cur_max_z;
+	cur_max_z += range;
+	if (z_point >= cur_min_z && z_point < cur_max_z)
+	{
+		r = 104 +(((141 - 104) / range) * (z_point - cur_min_z));
+		g = 222 + (((239 - 222) / range) * (z_point - cur_min_z));
+		b = 223 + (((239 - 223) / range) * (z_point - cur_min_z));
+		red = 0x00000000 + (r <<16);
+		green = 0x00000000 + (g << 8);
+		blue = 0x00000000 +b;
+		color = red + green + blue;
+		return (color);
+	}
+	cur_min_z = cur_max_z;
+	cur_max_z += range;
+	if (z_point >= cur_min_z && z_point < cur_max_z)
+	{
+		
+		r = 141 +(((174 - 141) / range) * (z_point - cur_min_z));
+		g = 239 + (((255 - 239) / range) * (z_point - cur_min_z));
+		red = 0x00000000 + (r <<16);
+		b = 207 + (((255 - 207) / range) * (z_point - cur_min_z));
+		green = 0x00000000 + (g << 8);
+		blue = 0x00000000 +b;
+		color = red + green + blue;
+		return (color);
+	}
+	return(0);
+}
 int	roid_build_img(t_data *data, int color)
 {
 	char	*ptr;
@@ -793,17 +1057,17 @@ int	roid_rotation(t_data *data, double *x1, double *y1)
 	
 	R = (data->width -1) /(6.28);
 	longitude = (data->x)/ (R);
-	latitude = -3.14/data->height * data->y;
+	latitude = 3.14/data->height * data->y;
 	longitude1 = (*x1)/ R;
-	latitude1 = -3.14/data->height * (*y1);
+	latitude1 = 3.14/data->height * (*y1);
 	if (data->y == (data->height/2))
-		latitude = -3.14/2;
-	else if (data->y == -(data->height/2))
 		latitude = 3.14/2;
+	else if (data->y == -(data->height/2))
+		latitude = -3.14/2;
 	if ((*y1) == (data->height/2))
-		latitude1 = -3.1/2;
+		latitude1 = 3.14/2;
 	else if ((*y1) == -(data->height/2))
-		latitude1 = 3.1/2;
+		latitude1 = -3.14/2;
 	data->v = (R + data->z/adj_z)* cos(latitude) *cos(longitude);
 	data->u = (R + data->z/adj_z) * cos(latitude) *sin(longitude);
 	data->z = (R + data->z/adj_z) * sin(latitude);
