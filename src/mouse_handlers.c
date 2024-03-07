@@ -12,8 +12,6 @@
 
 #include "../fdf.h"
 
-static int	check_if_between(int begin, int end, int num_to_check);
-
 int	handle_mouse_move(int x, int y, t_data *data)
 {
 	if (data->button == 1 && x > 235)
