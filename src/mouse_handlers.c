@@ -6,13 +6,11 @@
 /*   By: masoares <masoares@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 11:26:16 by ruiolive          #+#    #+#             */
-/*   Updated: 2024/03/06 13:01:42 by masoares         ###   ########.fr       */
+/*   Updated: 2024/03/06 13:18:52 by masoares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fdf.h"
-
-static int	check_if_between(int begin, int end, int num_to_check);
 
 int	handle_mouse_move(int x, int y, t_data *data)
 {

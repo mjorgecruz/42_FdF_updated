@@ -6,7 +6,7 @@
 /*   By: masoares <masoares@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 14:12:18 by ruiolive          #+#    #+#             */
-/*   Updated: 2024/03/06 10:22:08 by masoares         ###   ########.fr       */
+/*   Updated: 2024/03/06 17:24:27 by masoares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	bresenham(t_data *data, double x1, double y1)
 	[data->x + (data->width / 2)].z;
 	data->z1 = data->map[(int)y1 + (data->height / 2)] \
 	[(int)x1 + (data->width / 2)].z;
+	data->z_copy = data->z;
+	data->z1_copy = data->z1;
 	data->color_default = data->map[data->y + (data->height / 2)] \
 	[data->x + (data->width / 2)].color;
 	colors_change(data);
