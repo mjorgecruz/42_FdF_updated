@@ -3,17 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   mouse_handlers.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ruiolive <ruiolive@student.42.fr>          +#+  +:+       +#+        */
+/*   By: masoares <masoares@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 11:26:16 by ruiolive          #+#    #+#             */
-/*   Updated: 2023/12/05 15:12:52 by ruiolive         ###   ########.fr       */
+/*   Updated: 2024/03/06 13:18:52 by masoares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fdf.h"
 
 static int	check_if_between(int begin, int end, int num_to_check);
-int	loading(t_data *data);
 
 int	handle_mouse_move(int x, int y, t_data *data)
 {
@@ -429,7 +428,7 @@ void	free_info(t_data *data)
 	mlx_destroy_image(data->mlx_ptr, data->img.mlx_img);
 }
 
-static int	check_if_between(int begin, int end, int num_to_check)
+int	check_if_between(int begin, int end, int num_to_check)
 {
 	if (num_to_check > begin && num_to_check < end)
 		return (1);

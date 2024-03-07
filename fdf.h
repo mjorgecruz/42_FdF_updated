@@ -6,7 +6,7 @@
 /*   By: masoares <masoares@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 10:34:56 by ruiolive          #+#    #+#             */
-/*   Updated: 2024/03/05 17:06:55 by masoares         ###   ########.fr       */
+/*   Updated: 2024/03/06 23:08:46 by masoares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,11 @@ typedef struct s_data
 	t_info	info;
 	t_fdf	**map;
 	t_img	img;
+	float	z_copy;
+	float	z1_copy;
+	int		red;
+	int		green;
+	int		blue;	
 }	t_data;
 
 ///////////////////////////////
@@ -167,6 +172,7 @@ int		move_handle(int keysym, t_data *data);
 int		angle_handle(int keysym, t_data *data);
 int		projection_handle(int keysym, t_data *data);
 int		z_handle(int keysym, t_data *data);
+int		check_if_between(int begin, int end, int num_to_check);
 
 ///////////////////////////////
 //      Colors Functions     //
@@ -225,9 +231,16 @@ void	roid_map_misto1(t_data *data);
 void	roid_map_misto2(t_data *data);
 void	roid_bresenham(t_data *data, double x1, double y1);
 int		roid_rotation(t_data *data, double *x1, double *y1);
-int		roid_rotation_new(t_data *data, double *x1, double *y1);
 int		roid_handle_keypress(int keysym, t_data *data);
 int		roid_handle_mouse_move(int x, int y, t_data *data);
 int		roid_handle_mouse_down(int button, int x, int y, t_data *data);
+void	roid_bresenham_colour(t_data *data, double x1, double y1);
+int 	roid_color(t_data *data, double z_point);
+int		roid_colors_above_2(t_data *data, double z_point);
+int		roid_colors_below_2(t_data *data, double z_point);
+int		roid_colors_above_3(t_data *data, double z_point);
+int		roid_colors_below_3(t_data *data, double z_point);
+int		roid_build_img(t_data *data, int color);
+
 
 #endif
