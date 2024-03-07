@@ -13,6 +13,7 @@
 #include "../fdf.h"
 
 static int	check_if_between(int begin, int end, int num_to_check);
+int	loading(t_data *data);
 
 int	handle_mouse_move(int x, int y, t_data *data)
 {
@@ -314,7 +315,6 @@ int	handle_entry_mouse_down(int button, int x, int y, t_data *data)
 {
 	if (x > 790 && x < 1128 && y > 750 && y < 820 && button == 1)
 	{
-		mlx_clear_window(data->mlx_ptr, data->win_ptr);
 		mlx_destroy_image(data->mlx_ptr, data->entry_img);
 		mlx_destroy_window(data->mlx_ptr, data->win_ptr);
 		data->win_ptr = NULL;
@@ -324,7 +324,6 @@ int	handle_entry_mouse_down(int button, int x, int y, t_data *data)
 	}
 	else if (x > 790 && x < 1128 && y > 650 && y < 712 && button == 1)
 	{
-		mlx_clear_window(data->mlx_ptr, data->win_ptr);
 		mlx_destroy_image(data->mlx_ptr, data->entry_img);
 		render_choose_menu(data);
 		mlx_hook(data->win_ptr, DestroyNotify, NoEventMask, &handle_menu_choose_close, data);
@@ -340,7 +339,6 @@ int	handle_choose_map_mouse_down(int button, int x, int y, t_data *data)
 {
 	if (x > 790 && x < 1128 && y > 868 && y < 933 && button == 1)
 	{
-		mlx_clear_window(data->mlx_ptr, data->win_ptr);
 		mlx_destroy_image(data->mlx_ptr, data->choose_img);
 		data->menu_entry_file = "./sprites_xpm/menu_start.xpm";
 		data->choose_file = "./sprites_xpm/choose_map.xpm";

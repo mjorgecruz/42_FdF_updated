@@ -17,6 +17,10 @@
 # include <stdlib.h>
 # include <fcntl.h>
 # include <math.h>
+# include <stdbool.h>
+# include <wait.h>
+# include <signal.h>
+# include <pthread.h>
 # include "./include/Libft/libft.h"
 # include "./minilibx-linux/mlx.h"
 # include <X11/keysym.h>
