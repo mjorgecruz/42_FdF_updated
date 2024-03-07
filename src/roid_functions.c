@@ -6,7 +6,7 @@
 /*   By: masoares <masoares@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 10:11:05 by masoares          #+#    #+#             */
-/*   Updated: 2024/03/07 12:22:30 by masoares         ###   ########.fr       */
+/*   Updated: 2024/03/07 14:11:34 by masoares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -860,18 +860,18 @@ int	roid_colors_below_4(t_data *data, double z_point)
 	double	cur_min_z;
 	int		color;
 
-	red = 0;
-	green = 47;
-	blue = 50;
+	red = 53;
+	green = 17;
+	blue = 65;
 	range = -data->min_z / 7;
 	cur_max_z = data->min_z + 1 * range;
 	cur_min_z = data->min_z;
 
 	if (z_point >= cur_min_z && z_point < cur_max_z)
 	{
-		r = 0;
-		g = 47 + (((93 - 47) / range) * (z_point - cur_min_z));
-		b =50 + (((96 - 50) / range) * (z_point - cur_min_z));
+		r = 53 + (((93 - 53) / range) * (z_point - cur_min_z));
+		g = 17 + (((93 - 17) / range) * (z_point - cur_min_z));
+		b = 65 + (((96 - 65) / range) * (z_point - cur_min_z));
 		red = 0x00000000 + (r << 16);
 		green = 0x00000000 + (g << 8);
 		blue = 0x00000000 + b;
@@ -882,9 +882,9 @@ int	roid_colors_below_4(t_data *data, double z_point)
 	cur_max_z += range;
 	if (z_point >= cur_min_z && z_point < cur_max_z)
 	{
-		r = 0;
-		g = 93 + (((122 - 93) / range) * (z_point - cur_min_z));
-		b =96 + (((124 - 96) / range) * (z_point - cur_min_z));
+		r = 93 + (((137 - 93) / range) * (z_point - cur_min_z));
+		g = 93 + (((96 - 93) / range) * (z_point - cur_min_z));
+		b =96 + (((149 - 96) / range) * (z_point - cur_min_z));
 		red = 0x00000000 + (r << 16);
 		green = 0x00000000 + (g << 8);
 		blue = 0x00000000 + b;
@@ -895,9 +895,9 @@ int	roid_colors_below_4(t_data *data, double z_point)
 	cur_max_z += range;
 	if (z_point >= cur_min_z && z_point < cur_max_z)
 	{
-		r = 0;
-		g =122 + ((151 - 122) / range) * (z_point - cur_min_z);
-		b = 124 + ((153 - 124) / range) * (z_point - cur_min_z);
+		r = 137 + ((251 - 137) / range) * (z_point - cur_min_z);
+		g =96 + ((73 - 96) / range) * (z_point - cur_min_z);
+		b = 124 + ((165 - 124) / range) * (z_point - cur_min_z);
 		red = 0x00000000 + (r << 16);
 		green = 0x00000000 + (g << 8);
 		blue = 0x00000000 + (b);
@@ -908,9 +908,9 @@ int	roid_colors_below_4(t_data *data, double z_point)
 	cur_max_z += range;
 	if (z_point >= cur_min_z && z_point < cur_max_z)
 	{
-		r = 0;
-		g = 151 + (((182 - 151) / range) * (z_point - cur_min_z));
-		b = 153 + (((183 - 153) / range) * (z_point - cur_min_z));
+		r = 251 + ((80 - 251) / range) * (z_point - cur_min_z);
+		g = 73 + (((192 - 73) / range) * (z_point - cur_min_z));
+		b = 165 + (((50 - 165) / range) * (z_point - cur_min_z));
 		red = 0x00000000 + (r <<16);
 		green = 0x00000000 + (g << 8);
 		blue = 0x00000000 +b;
@@ -921,9 +921,9 @@ int	roid_colors_below_4(t_data *data, double z_point)
 	cur_max_z += range;
 	if (z_point >= cur_min_z && z_point < cur_max_z)
 	{
-		r =0 +(((56 - 0) / range) * (z_point - cur_min_z));
-		g = 182 +(((206 - 182) / range) * (z_point - cur_min_z));
-		b = 183 +(((207 - 183) / range) * (z_point - cur_min_z));
+		r = 251 +(((41 - 80) / range) * (z_point - cur_min_z));
+		g = 192 +(((231 - 192) / range) * (z_point - cur_min_z));
+		b = 50 +(((145 - 50) / range) * (z_point - cur_min_z));
 		red = 0x00000000 + (r <<16);
 		green = 0x00000000 + (g << 8);
 		blue = 0x00000000 +b;
@@ -1069,10 +1069,10 @@ int	roid_rotation(t_data *data, double *x1, double *y1)
 	else if ((*y1) == -(data->height/2))
 		latitude1 = -3.14/2;
 	data->v = (R + data->z/adj_z)* cos(latitude) *cos(longitude);
-	data->u = (R + data->z/adj_z) * cos(latitude) *sin(longitude);
+	data->u = -(R + data->z/adj_z) * cos(latitude) *sin(longitude);
 	data->z = (R + data->z/adj_z) * sin(latitude);
 	*y1= (R + data->z1/adj_z) * cos(latitude1) *cos(longitude1);
-	*x1 = (R + data->z1/adj_z) * cos(latitude1) *sin(longitude1);
+	*x1 = - (R + data->z1/adj_z) * cos(latitude1) *sin(longitude1);
 	data->z1 = (R + data->z1/adj_z) * sin(latitude1);
 	rotate_y_axis(data, &data->u, &data->z);
 	rotate_y_axis(data, x1, &data->z1);
