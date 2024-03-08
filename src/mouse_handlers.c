@@ -62,6 +62,18 @@ int	handle_mouse_move(int x, int y, t_data *data)
 		data->menu_file = "./sprites_xpm/move_y_right.xpm";
 	else if (x > 170 && x < 185 && y > 529 && y < 544 && strcmp(data->menu_file, "./sprites_xpm/move_y_left.xpm"))
 		data->menu_file = "./sprites_xpm/move_y_left.xpm";
+	else if (x > 215 && x < 230 && y > 618 && y < 633 && strcmp(data->menu_file, "./sprites_xpm/red_right.xpm"))
+		data->menu_file = "./sprites_xpm/red_right.xpm";
+	else if (x > 170 && x < 185 && y > 618 && y < 633 && strcmp(data->menu_file, "./sprites_xpm/red_left.xpm"))
+		data->menu_file = "./sprites_xpm/red_left.xpm";
+	else if (x > 215 && x < 230 && y > 653 && y < 668 && strcmp(data->menu_file, "./sprites_xpm/green_right.xpm"))
+		data->menu_file = "./sprites_xpm/green_right.xpm";
+	else if (x > 170 && x < 185 && y > 653 && y < 668 && strcmp(data->menu_file, "./sprites_xpm/green_left.xpm"))
+		data->menu_file = "./sprites_xpm/green_left.xpm";
+	else if (x > 215 && x < 230 && y > 688 && y < 703 && strcmp(data->menu_file, "./sprites_xpm/blue_right.xpm"))
+		data->menu_file = "./sprites_xpm/blue_right.xpm";
+	else if (x > 170 && x < 185 && y > 688 && y < 703 && strcmp(data->menu_file, "./sprites_xpm/blue_left.xpm"))
+		data->menu_file = "./sprites_xpm/blue_left.xpm";
 	else if (x > 60 && x < 170 && y > 725 && y < 765 && strcmp(data->menu_file, "./sprites_xpm/menu_reset.xpm"))
 		data->menu_file = "./sprites_xpm/menu_reset.xpm";
 	else if (x > 60 && x < 170 && y > 775 && y < 805 && strcmp(data->menu_file, "./sprites_xpm/menu_exit.xpm"))
@@ -72,7 +84,8 @@ int	handle_mouse_move(int x, int y, t_data *data)
 		|| ((check_if_between(170, 185, x) || check_if_between(215, 230, x)) && 
 		(check_if_between(210, 225, y) || check_if_between(245, 260, y) || check_if_between(278, 293, y) 
 		|| check_if_between(370, 385, y) || check_if_between(461, 476, y) || check_if_between(496, 511, y) 
-		|| check_if_between(529, 544, y))))
+		|| check_if_between(529, 544, y) || check_if_between(618, 633, y) || check_if_between(653, 668, y)
+		|| check_if_between(688, 703, y))))
 			return (0);
 		data->menu_file = "./sprites_xpm/menu.xpm";
 	}
@@ -278,6 +291,60 @@ int	handle_mouse_down(int button, int x, int y, t_data *data)
 		else
 			render_map(data);
 	}
+	else if (button == 1 && x > 215 && x < 230 && y > 618 && y < 633)
+	{
+		free_info(data);
+		data->red += 10000;
+		if (data->render_status == 2)
+			roid_render_map(data);
+		else
+			render_map(data);
+	}
+	else if (button == 1 && x > 170 && x < 185 && y > 618 && y < 633)
+	{
+		free_info(data);
+		data->red -= 100000;
+		if (data->render_status == 2)
+			roid_render_map(data);
+		else
+			render_map(data);
+	}
+	else if (button == 1 && x > 215 && x < 230 && y > 653 && y < 668)
+	{
+		free_info(data);
+		data->green += 100000;
+		if (data->render_status == 2)
+			roid_render_map(data);
+		else
+			render_map(data);
+	}
+	else if (button == 1 && x > 170 && x < 185 && y > 653 && y < 668)
+	{
+		free_info(data);
+		data->green -= 100000;
+		if (data->render_status == 2)
+			roid_render_map(data);
+		else
+			render_map(data);
+	}
+	else if (button == 1 && x > 215 && x < 230 && y > 688 && y < 703)
+	{
+		free_info(data);
+		data->blue += 100000;
+		if (data->render_status == 2)
+			roid_render_map(data);
+		else
+			render_map(data);
+	}
+	else if (button == 1 && x > 170 && x < 185 && y > 688 && y < 703)
+	{
+		free_info(data);
+		data->blue -= 100000;
+		if (data->render_status == 2)
+			roid_render_map(data);
+		else
+			render_map(data);
+	}
 	else if (button == 1 && x > 60 && x < 170 && y > 725 && y < 765)
 	{
 		free_info(data);
@@ -421,7 +488,9 @@ void	free_info(t_data *data)
 	free(data->info.high);
 	free(data->info.horizontal);
 	free(data->info.Vertical);
-	free(data->info.color_rad);
+	free(data->info.red);
+	free(data->info.green);
+	free(data->info.blue);
 	mlx_destroy_image(data->mlx_ptr, data->menu_img);
 	mlx_destroy_image(data->mlx_ptr, data->img.mlx_img);
 }

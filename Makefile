@@ -10,7 +10,6 @@ SRC = ./src/fdf.c\
 	./src/maps_res.c\
 	./src/color_utils.c\
 	./src/get_colors.c\
-	./src/diff_colors.c\
 	./src/rotation.c\
 	./src/transf_zoom.c\
 	./src/errors.c\

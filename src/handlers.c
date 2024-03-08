@@ -26,7 +26,7 @@ int	handle_keypress(int keysym, t_data *data)
 	else if (keysym == XK_KP_Add || keysym == XK_KP_Subtract)
 		z_handle(keysym, data);
 	else if (keysym == XK_F1 || keysym == XK_F2 || keysym == XK_F3 \
-	|| keysym == XK_p)
+	|| keysym == XK_F4 || keysym == XK_F5)
 		color_handler(keysym, data);
 	else if (keysym == XK_Shift_L)
 		data->render_status = 2;
