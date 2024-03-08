@@ -47,7 +47,9 @@ typedef struct s_info
 	char	*high;
 	char	*horizontal;
 	char	*Vertical;
-	char	*color_rad;
+	char	*red;
+	char	*green;
+	char	*blue;
 }	t_info;
 
 typedef struct s_fdf
@@ -182,11 +184,6 @@ int		atoi_base(char *str);
 int		check_for_colors(char *str);
 int		get_pos(char c);
 int		color_handler(int keysym, t_data *data);
-void	colors_change(t_data *data);
-void	colors1(t_data *data);
-void	colors2(t_data *data);
-void	colors3(t_data *data);
-void	colors4(t_data *data);
 void	get_max_z(t_data *data);
 void	get_min_z(t_data *data);
 
@@ -218,7 +215,7 @@ void	free_info(t_data *data);
 
 
 
-void ftoa(float n, char* res, int afterpoint) ;
+void 	ftoa(float n, char* res, int afterpoint) ;
 
 ///////////////////////////////
 //       Roid_functions      //
@@ -240,6 +237,8 @@ int		roid_colors_above_2(t_data *data, double z_point);
 int		roid_colors_below_2(t_data *data, double z_point);
 int		roid_colors_above_3(t_data *data, double z_point);
 int		roid_colors_below_3(t_data *data, double z_point);
+int		roid_colors_above_4(t_data *data, double z_point);
+int		roid_colors_below_4(t_data *data, double z_point);
 int		roid_build_img(t_data *data, int color);
 
 

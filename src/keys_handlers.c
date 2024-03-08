@@ -101,7 +101,9 @@ int	color_handler(int keysym, t_data *data)
 		data->color_save = 2;
 	else if (keysym == XK_F3)
 		data->color_save = 3;
-	else if (keysym == XK_p)
-		data->add_color += 1;
+	else if (keysym == XK_F4)
+		data->color_save = 4;
+	else if (keysym == XK_F5)
+		data->color_save = 5;
 	return (0);
 }

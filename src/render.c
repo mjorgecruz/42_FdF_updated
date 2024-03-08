@@ -54,7 +54,9 @@ void	render_strings1(t_data *data)
 	data->info.high = NULL;
 	data->info.horizontal = NULL;
 	data->info.Vertical = NULL;
-	data->info.color_rad = NULL;
+	data->info.red = NULL;
+	data->info.green = NULL;
+	data->info.blue = NULL;
 
 	ftoa(data->angle_x, data->info.angle_x, 1);
 	ftoa(data->angle_y, data->info.angle_y, 1);
@@ -63,7 +65,9 @@ void	render_strings1(t_data *data)
 	data->info.high = ft_itoa(get_new_max_z(data));
 	data->info.horizontal =  ft_itoa(data->hor);
 	data->info.Vertical =  ft_itoa(data->hey);
-	data->info.color_rad = ft_itoa(data->add_color);
+	data->info.red = ft_itoa(data->red);
+	data->info.green = ft_itoa(data->green);
+	data->info.blue = ft_itoa(data->blue);
 	mlx_string_put(data->mlx_ptr, data->win_ptr, 192,
 	224, 0x000000, data->info.angle_x);
 	mlx_string_put(data->mlx_ptr, data->win_ptr, 192,
@@ -78,6 +82,12 @@ void	render_strings1(t_data *data)
 	505, 0x000000, data->info.horizontal);
 	mlx_string_put(data->mlx_ptr, data->win_ptr, 192,
 	539, 0x000000, data->info.Vertical);
+	mlx_string_put(data->mlx_ptr, data->win_ptr, 190,
+	630, 0x000000, data->info.red);
+	mlx_string_put(data->mlx_ptr, data->win_ptr, 190,
+	662, 0x000000, data->info.green);
+	mlx_string_put(data->mlx_ptr, data->win_ptr, 190,
+	694, 0x000000, data->info.blue);
 }
 
 static int	get_new_max_z(t_data *data)

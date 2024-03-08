@@ -111,33 +111,6 @@ void	roid_map_misto2(t_data *data)
 	}
 }
 
-void	roid_bresenham(t_data *data, double x1, double y1)
-{
-	data->u = data->x;
-	data->v = data->y;
-	data->z = data->map[data->y + (data->height / 2)] \
-	[data->x + (data->width / 2)].z;
-	data->z1 = data->map[(int)y1 + (data->height / 2)] \
-	[(int)x1 + (data->width / 2)].z;
-	data->color_default = data->map[data->y + (data->height / 2)] \
-	[data->x + (data->width / 2)].color;
-	colors_change(data);
-	roid_rotation(data, &x1, &y1);
-	zoom(&x1, &y1, data);
-	map_move(&x1, &y1, data);
-	data->x_step = x1 - data->u;
-	data->y_step = y1 - data->v;
-	data->max = max_step(positive(data->x_step), positive(data->y_step));
-	data->x_step /= data->max;
-	data->y_step /= data->max;
-	while ((int)(data->u - x1) || (int)(data->v - y1))
-	{
-		build_img(data);
-		data->u += data->x_step;
-		data->v += data->y_step;
-	}
-}
-
 void	roid_bresenham_colour(t_data *data, double x1, double y1)
 {
 	int z_point;
@@ -192,13 +165,13 @@ int roid_color(t_data *data, double z_point)
 		if (z_point < 0)
 			color = roid_colors_below_3(data, z_point);
 	}
-	// if (data->color_save == 4)
-	// {
-	// 	if (z_point >= 0)
-	// 		color = roid_colors_above_4(data, z_point);
-	// 	if (z_point < 0)
-	// 		color = roid_colors_below_4(data, z_point);
-	//}
+	if (data->color_save == 4)
+	{
+		if (z_point >= 0)
+			color = roid_colors_above_4(data, z_point);
+		if (z_point < 0)
+			color = roid_colors_below_4(data, z_point);
+	}
 	return(color);
 }
 int	roid_colors_above_2(t_data *data, double z_point)
@@ -977,7 +950,7 @@ int	roid_build_img(t_data *data, int color)
 	char	*ptr;
 
 	ptr = NULL;
-	if (data->u < (WIDTH - 200) && data->u >= 0 
+	if (data->u < (WIDTH - 235) && data->u >= 0 
 	&& data->v < (HEIGHT) && data->v >= 0)
 	{
 		if (color == 0)
@@ -1080,82 +1053,5 @@ int	roid_rotation(t_data *data, double *x1, double *y1)
 	rotate_z_axis(data, x1, y1);
 	rotate_x_axis(data, &data->v, &data->z);
 	rotate_x_axis(data, y1, &data->z1);
-	return (0);
-}
-
-int	roid_handle_keypress(int keysym, t_data *data)
-{
-	if (keysym == XK_Escape)
-		handle_close(data);
-	else if (keysym == XK_Right || keysym == XK_Left || \
-	keysym == XK_Up || keysym == XK_Down || keysym == XK_r)
-		move_handle(keysym, data);
-	else if (keysym == XK_q || keysym == XK_w || keysym == XK_a \
-	|| keysym == XK_s || keysym == XK_z || keysym == XK_x)
-		angle_handle(keysym, data);
-	else if (keysym == XK_1 || keysym == XK_2 || keysym == XK_3 \
-	|| keysym == XK_4)
-		projection_handle(keysym, data);
-	else if (keysym == XK_KP_Add || keysym == XK_KP_Subtract)
-		z_handle(keysym, data);
-	else if (keysym == XK_F1 || keysym == XK_F2 || keysym == XK_F3 \
-	|| keysym == XK_p)
-		color_handler(keysym, data);
-	mlx_destroy_image(data->mlx_ptr, data->img.mlx_img);
-	roid_render_map(data);
-	return (0);
-}
-
-int	roid_handle_mouse_move(int x, int y, t_data *data)
-{
-	if (data->button == 1)
-	{
-		data->hor += (x - data->prev_x);
-		data->hey += (y - data->prev_y);
-		data->prev_x = x;
-		data->prev_y = y;
-	}
-	else if (data->button == 2)
-	{
-		data->angle_z -= (x - data->prev_x - (y - data->prev_y)) * 0.002;
-		data->prev_x = x;
-		data->prev_y = y;
-	}
-	else if (data->button == 3)
-	{
-		data->angle_x -= (y - data->prev_y) * 0.002;
-		data->angle_y += (x - data->prev_x) * 0.002;
-		data->prev_x = x;
-		data->prev_y = y;
-	}
-	else
-		return (0);
-	mlx_destroy_image(data->mlx_ptr, data->img.mlx_img);
-	roid_render_map(data);
-	return (0);
-}
-
-int	roid_handle_mouse_down(int button, int x, int y, t_data *data)
-{
-	if (button == 1 || button == 2 || button == 3)
-	{
-		data->prev_x = x;
-		data->prev_y = y;
-		data->button = button;
-	}
-	else if (button == 4)
-	{
-		if (data->zoom < 150)
-			data->zoom *= 1.5;
-		mlx_destroy_image(data->mlx_ptr, data->img.mlx_img);
-		roid_render_map(data);
-	}
-	else if (button == 5)
-	{
-		if (data->zoom > 3)
-			data->zoom /= 1.5;
-		mlx_destroy_image(data->mlx_ptr, data->img.mlx_img);
-		roid_render_map(data);
-	}
 	return (0);
 }

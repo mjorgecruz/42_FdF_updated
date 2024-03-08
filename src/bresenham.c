@@ -14,17 +14,18 @@
 
 void	bresenham(t_data *data, double x1, double y1)
 {
+	int z_point;
+	double z_step;
 	data->u = data->x;
 	data->v = data->y;
-	data->z = data->map[data->y + (data->height / 2)] \
+	data->z = data->map[data->y + (data->height / 2)] 
 	[data->x + (data->width / 2)].z;
-	data->z1 = data->map[(int)y1 + (data->height / 2)] \
-	[(int)x1 + (data->width / 2)].z;
 	data->z_copy = data->z;
+	data->z1 = data->map[(int)y1 + (data->height / 2)] 
+	[(int)x1 + (data->width / 2)].z;
 	data->z1_copy = data->z1;
-	data->color_default = data->map[data->y + (data->height / 2)] \
+	data->color_default = data->map[data->y + (data->height / 2)] 
 	[data->x + (data->width / 2)].color;
-	colors_change(data);
 	rotation(data, &x1, &y1);
 	zoom(&x1, &y1, data);
 	map_move(&x1, &y1, data);
@@ -33,9 +34,16 @@ void	bresenham(t_data *data, double x1, double y1)
 	data->max = max_step(positive(data->x_step), positive(data->y_step));
 	data->x_step /= data->max;
 	data->y_step /= data->max;
+	z_point = data->z_copy;	
+	z_step = (data->z1_copy - data->z_copy) / positive((x1 - data->u) / data->x_step);
 	while ((int)(data->u - x1) || (int)(data->v - y1))
 	{
-		build_img(data);
+		int color;
+		color = 0;
+		if (data->color_save > 1)
+			color = roid_color(data, z_point);
+		roid_build_img(data, color);
+		z_point += z_step;
 		data->u += data->x_step;
 		data->v += data->y_step;
 	}

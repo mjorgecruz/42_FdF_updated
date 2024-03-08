@@ -59,21 +59,3 @@ int	check_for_colors(char *str)
 	}
 	return (0);
 }
-
-void	colors_change(t_data *data)
-{
-	if (data->color_save == 2)
-	{
-		if (data->z1 >= 0 || data->z >= 0)
-			colors1(data);
-		else
-			colors2(data);
-	}
-	else if (data->color_save == 3)
-	{
-		if (data->z1 >= 0 || data->z >= 0)
-			colors3(data);
-		else
-			colors4(data);
-	}
-}
