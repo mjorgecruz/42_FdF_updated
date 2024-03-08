@@ -6,7 +6,7 @@
 /*   By: masoares <masoares@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 10:34:56 by ruiolive          #+#    #+#             */
-/*   Updated: 2024/03/06 23:08:46 by masoares         ###   ########.fr       */
+/*   Updated: 2024/03/08 10:04:29 by masoares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -240,6 +240,8 @@ int		roid_colors_above_2(t_data *data, double z_point);
 int		roid_colors_below_2(t_data *data, double z_point);
 int		roid_colors_above_3(t_data *data, double z_point);
 int		roid_colors_below_3(t_data *data, double z_point);
+int		roid_colors_above_4(t_data *data, double z_point);
+int		roid_colors_below_4(t_data *data, double z_point);
 int		roid_build_img(t_data *data, int color);
 
 

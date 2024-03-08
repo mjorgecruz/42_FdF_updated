@@ -6,7 +6,7 @@
 /*   By: masoares <masoares@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 10:11:05 by masoares          #+#    #+#             */
-/*   Updated: 2024/03/07 14:11:34 by masoares         ###   ########.fr       */
+/*   Updated: 2024/03/08 10:03:39 by masoares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -192,13 +192,13 @@ int roid_color(t_data *data, double z_point)
 		if (z_point < 0)
 			color = roid_colors_below_3(data, z_point);
 	}
-	// if (data->color_save == 4)
-	// {
-	// 	if (z_point >= 0)
-	// 		color = roid_colors_above_4(data, z_point);
-	// 	if (z_point < 0)
-	// 		color = roid_colors_below_4(data, z_point);
-	//}
+	if (data->color_save == 4)
+	{
+		if (z_point >= 0)
+			color = roid_colors_above_4(data, z_point);
+		if (z_point < 0)
+			color = roid_colors_below_4(data, z_point);
+	}
 	return(color);
 }
 int	roid_colors_above_2(t_data *data, double z_point)
