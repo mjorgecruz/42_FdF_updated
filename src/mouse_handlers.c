@@ -6,7 +6,7 @@
 /*   By: masoares <masoares@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 11:26:16 by ruiolive          #+#    #+#             */
-/*   Updated: 2024/03/06 13:18:52 by masoares         ###   ########.fr       */
+/*   Updated: 2024/03/10 19:59:32 by masoares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -294,7 +294,8 @@ int	handle_mouse_down(int button, int x, int y, t_data *data)
 	else if (button == 1 && x > 215 && x < 230 && y > 618 && y < 633)
 	{
 		free_info(data);
-		data->red += 10000;
+		if (data->red < 100)
+			data->red += 5;
 		if (data->render_status == 2)
 			roid_render_map(data);
 		else
@@ -303,7 +304,8 @@ int	handle_mouse_down(int button, int x, int y, t_data *data)
 	else if (button == 1 && x > 170 && x < 185 && y > 618 && y < 633)
 	{
 		free_info(data);
-		data->red -= 100000;
+		if (data->red > 0)
+			data->red -= 5;
 		if (data->render_status == 2)
 			roid_render_map(data);
 		else
@@ -312,7 +314,8 @@ int	handle_mouse_down(int button, int x, int y, t_data *data)
 	else if (button == 1 && x > 215 && x < 230 && y > 653 && y < 668)
 	{
 		free_info(data);
-		data->green += 100000;
+		if (data->green < 100)
+			data->green += 5;
 		if (data->render_status == 2)
 			roid_render_map(data);
 		else
@@ -321,7 +324,8 @@ int	handle_mouse_down(int button, int x, int y, t_data *data)
 	else if (button == 1 && x > 170 && x < 185 && y > 653 && y < 668)
 	{
 		free_info(data);
-		data->green -= 100000;
+		if (data->green > 0)
+			data->green -= 5;
 		if (data->render_status == 2)
 			roid_render_map(data);
 		else
@@ -330,7 +334,8 @@ int	handle_mouse_down(int button, int x, int y, t_data *data)
 	else if (button == 1 && x > 215 && x < 230 && y > 688 && y < 703)
 	{
 		free_info(data);
-		data->blue += 100000;
+		if (data->blue < 100)
+			data->blue += 5;
 		if (data->render_status == 2)
 			roid_render_map(data);
 		else
@@ -339,7 +344,8 @@ int	handle_mouse_down(int button, int x, int y, t_data *data)
 	else if (button == 1 && x > 170 && x < 185 && y > 688 && y < 703)
 	{
 		free_info(data);
-		data->blue -= 100000;
+		if (data->blue > 0)
+			data->blue -= 5;
 		if (data->render_status == 2)
 			roid_render_map(data);
 		else

@@ -6,7 +6,7 @@
 /*   By: masoares <masoares@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 09:57:29 by ruiolive          #+#    #+#             */
-/*   Updated: 2024/03/06 12:03:30 by masoares         ###   ########.fr       */
+/*   Updated: 2024/03/10 19:14:21 by masoares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,9 @@ void	init_data(t_data *data)
 	data->color_save = 0;
 	data->add_color = 1;
 	data->render_status = 1;
+	data->green = 0;
+	data->blue = 0;
+	data->red = 0;
 	data->menu_file = "./sprites_xpm/menu.xpm";
 	get_max_z(data);
 	get_min_z(data);
