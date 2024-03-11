@@ -438,7 +438,7 @@ int	handle_choose_map_mouse_down(int button, int x, int y, t_data *data)
 	else if (x > 145 && x < 480 && y > 513 && y < 572 && button == 1)
 		data->map_to_render = "./maps/fractal.fdf";
 	else if (x > 585 && x < 920 && y > 513 && y < 572 && button == 1)
-		data->map_to_render = "./maps/world.fdf";
+		data->map_to_render = "./maps/world_m.fdf";
 	else if (x > 1025 && x < 1360 && y > 513 && y < 572 && button == 1)
 		data->map_to_render = "./maps/julia.fdf";
 	else if (x > 1465 && x < 1800 && y > 513 && y < 572 && button == 1)
