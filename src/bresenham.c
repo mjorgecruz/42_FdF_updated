@@ -6,7 +6,7 @@
 /*   By: masoares <masoares@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 14:12:18 by ruiolive          #+#    #+#             */
-/*   Updated: 2024/03/06 17:24:27 by masoares         ###   ########.fr       */
+/*   Updated: 2024/03/09 17:42:56 by masoares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,10 @@ void	bresenham(t_data *data, double x1, double y1)
 	z_step = (data->z1_copy - data->z_copy) / positive((x1 - data->u) / data->x_step);
 	while ((int)(data->u - x1) || (int)(data->v - y1))
 	{
-		int color;
+	 	int color;
 		color = 0;
 		if (data->color_save > 1)
-			color = roid_color(data, z_point);
+	 		color = roid_color(data, z_point);
 		roid_build_img(data, color);
 		z_point += z_step;
 		data->u += data->x_step;
