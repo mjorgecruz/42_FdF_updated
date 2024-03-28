@@ -8,16 +8,16 @@
 
 To download the files ↙️
 ```bash
-git clone git@github.com:RuiPires999/fdf.git
+git clone git@github.com:Rui-Pedro-Pires/FdF.git
 ```
 
 To compile the program ↙️
 
 ```bash
-$ make
+$ cd FdF && make
 ```
 
-To launch the program with a valid map as parameter
+To launch the program
 ```bash
-$ ./fdf ./maps/test_maps/42.fdf
+$ ./fdf
 ```
