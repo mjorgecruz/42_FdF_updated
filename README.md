@@ -5,9 +5,7 @@
 </p>
 
 
-<img src="https://github.com/Rui-Pedro-Pires/FdF/blob/main/presentation/images/france_map.png" width=500 height=300 align="center"/>
-<img src="https://github.com/Rui-Pedro-Pires/FdF/blob/main/presentation/gifs/GIFMaker_me.gif" align="center"/>
-
+<img src="https://github.com/Rui-Pedro-Pires/FdF/blob/main/presentation/images/france_map.png" width=600 height=400 align="center"/>
 
 
 To download the files ↙️
@@ -20,6 +18,7 @@ To compile the program ↙️
 ```bash
 $ cd FdF && make
 ```
+<img src="https://github.com/Rui-Pedro-Pires/FdF/blob/main/presentation/gifs/GIFMaker_me.gif" align="center"/>
 
 To launch the program
 ```bash
