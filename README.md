@@ -5,8 +5,8 @@
 </p>
 
 
-<img src="https://github.com/Rui-Pedro-Pires/FdF/blob/main/presentation/gifs/GIFMaker_me.gif" align="left"/>
-<img src="https://github.com/Rui-Pedro-Pires/FdF/blob/main/presentation/images/france_map.png" width=400 height=200 align="center"/>
+<img src="https://github.com/Rui-Pedro-Pires/FdF/blob/main/presentation/images/france_map.png" width=500 height=300 align="center"/>
+<img src="https://github.com/Rui-Pedro-Pires/FdF/blob/main/presentation/gifs/GIFMaker_me.gif" align="center"/>
 
 
 
