@@ -4,10 +4,11 @@
 	<b><i>A simplified 3D graphic representation of a relief landscape.</i></b><br>
 </p>
 
-![example (1)](https://github.com/Rui-Pedro-Pires/FdF/blob/main/presentation/gifs/full_program.gif)
+
+<img src="https://github.com/Rui-Pedro-Pires/FdF/blob/main/presentation/gifs/GIFMaker_me.gif" align="left"/>
+<img src="https://github.com/Rui-Pedro-Pires/FdF/blob/main/presentation/images/france_map.png" width=400 height=200 align="center"/>
 
 
-<img src="https://github.com/Rui-Pedro-Pires/FdF/blob/main/presentation/images/france_map.png" width=600 height=300 align="right"/>
 
 To download the files ↙️
 ```bash
