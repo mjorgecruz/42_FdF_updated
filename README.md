@@ -1,5 +1,6 @@
 # FdF Remastered
 
+
 <img src="https://github.com/mjorgecruz/42_FdF_updated/blob/main/fdf0.gif" align="center"/>
 <img src="https://github.com/mjorgecruz/42_FdF_updated/blob/main/fdf1.gif" align="center"/>
 <img src="https://github.com/mjorgecruz/42_FdF_updated/blob/main/fdf3.gif" align="center"/>
@@ -11,8 +12,8 @@
 
 <img src="https://github.com/Rui-Pedro-Pires/FdF/blob/main/presentation/images/france_map.png" width=600 height=400 align="center"/>
 
-
-To download the files ↙️
+## How to run
+1. Clone repository
 ```bash
 git clone git@github.com:Rui-Pedro-Pires/FdF.git
 ```
