@@ -1,10 +1,10 @@
 # FdF Remastered
 
-<img src="https://github.com/mjorgecruz/42_FdF_updated/blob/main/fdf0.gif" width=600 height=400 align="center"/>
-<img src="https://github.com/mjorgecruz/42_FdF_updated/blob/main/fdf1.gif" width=600 height=400 align="center"/>
-<img src="https://github.com/mjorgecruz/42_FdF_updated/blob/main/fdf2.gif" width=600 height=400 align="center"/>
-<img src="https://github.com/mjorgecruz/42_FdF_updated/blob/main/fdf3.gif" width=600 height=400 align="center"/>
-<img src="https://github.com/mjorgecruz/42_FdF_updated/blob/main/fdf4.gif" width=600 height=400 align="center"/>
+<img src="https://github.com/mjorgecruz/42_FdF_updated/blob/main/fdf0.gif" align="center"/>
+<img src="https://github.com/mjorgecruz/42_FdF_updated/blob/main/fdf1.gif" align="center"/>
+<img src="https://github.com/mjorgecruz/42_FdF_updated/blob/main/fdf2.gif" align="center"/>
+<img src="https://github.com/mjorgecruz/42_FdF_updated/blob/main/fdf3.gif" align="center"/>
+<img src="https://github.com/mjorgecruz/42_FdF_updated/blob/main/fdf4.gif" align="center"/>
 
 <p align="center">
 	<b><i>A simplified 3D graphic representation of a relief landscape.</i></b><br>
