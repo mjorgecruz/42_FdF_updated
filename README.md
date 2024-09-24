@@ -49,26 +49,33 @@ Besides the project itself, Rui Pires and I decided to carry on with the project
 
 1. **Standalone Application:**
    - Packaged as a standalone app for easy execution.
-</br></br>
+
 <div align="center">
 <img src="https://github.com/mjorgecruz/42_FdF_updated/blob/main/fdf0.gif" align="center"/>
 </div>
-</br></br>
+</br>
 
 2. **Selector Screen:**
    - Added a screen to select different maps or projection modes.
 3. **Control Panel:**
    - A control panel to adjust various parameters like colors, zoom, and rotation.
+   
+
+<div align="center">
+<img src="https://github.com/mjorgecruz/42_FdF_updated/blob/main/fdf1.gif" align="center"/>
+</div>
+</br>
+
 4. **Color Adjustments:**
    - Manual color adjustments during execution for a customized view.
 5. **Projections with a Twist:**
    - Added unique projection styles for a more creative visualization.
      
-</br></br>
+
 <div align="center">
 <img src="https://github.com/mjorgecruz/42_FdF_updated/blob/main/fdf3.gif" align="center"/>
 </div>
-</br></br>
+</br>
 ## Installation
 
 1. Clone the repository:
@@ -117,7 +124,7 @@ You can find sample `.fdf` files in the `maps` directory or create your own.
 
 
 
-<img src="https://github.com/mjorgecruz/42_FdF_updated/blob/main/fdf1.gif" align="center"/>
+
 
 <p align="center">
 	<b><i>A simplified 3D graphic representation of a relief landscape.</i></b><br>
