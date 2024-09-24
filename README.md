@@ -76,7 +76,7 @@ Besides the project itself, Rui Pires and I decided to carry on with the project
 <img src="https://github.com/mjorgecruz/42_FdF_updated/blob/main/fdf3.gif" align="center"/>
 </div>
 </br>
-## Installation
+## How to run
 
 1. Clone the repository:
 
@@ -95,24 +95,11 @@ This will create the `fdf` executable in the root directory.
 
 ## Usage
 
-Run the program with an `.fdf` file as an argument:
+Run the program:
 
 ```bash
-./fdf path/to/map.fdf
+./fdf
 ```
-
-You can find sample `.fdf` files in the `maps` directory or create your own.
-
-## Controls
-
-- **Arrow Keys:** Move the map (pan).
-- **+ / -:** Zoom in and out.
-- **W / A / S / D:** Rotate the map around the x and y axes.
-- **Q / E:** Rotate the map around the z-axis.
-- **1 / 2 / 3:** Switch between different projection modes.
-- **R:** Reset the view.
-- **ESC:** Exit the program.
-
 
 ## Credits
 
