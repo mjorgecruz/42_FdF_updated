@@ -8,6 +8,11 @@ The FdF project, short for "Fil de Fer" (French for "Wireframe"), is a graphics 
 </div>
 </br></br>
 
+---
+
+[Presentation](https://github.com/mjorgecruz/42_FdF_updated/blob/main/FdF_Rui_Jorge.pdf)
+
+---
 
 ## Project Objective
 
@@ -40,7 +45,7 @@ To see more information on the project subject and original objectives, check th
 
 ## Additional Enhancements
 
-Besides the 
+Besides the project itself, Rui Pires and I decided to carry on with the project and explore further what we could do 
 
 1. **Standalone Application:**
    - Packaged as a standalone app for easy execution.
