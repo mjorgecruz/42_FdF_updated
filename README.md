@@ -1,10 +1,13 @@
 # FdF Remastered
 
-# FdF Project - Enhanced Version
-
 This repository contains the enhanced version of the **FdF** project, a 3D wireframe viewer originally developed as part of the 42 school curriculum. The project was picked up and extended with additional features to explore the capabilities of graphics programming using the MiniLibX library. This README provides an overview of the project, including the original objectives, technical details, and new enhancements. </br></br>
 
-The FdF project, short for "Fil de Fer" (French for "Wireframe"), is a graphics programming exercise aimed at representing 3D landscapes as wireframe models. The project involves reading 2D coordinate data from a file and using it to draw a 3D representation in an isometric view. We picked up the original project, added several new features, and made a presentation to showcase these enhancements.
+The FdF project, short for "Fil de Fer" (French for "Wireframe"), is a graphics programming exercise aimed at representing 3D landscapes as wireframe models. The project involves reading 2D coordinate data from a file and using it to draw a 3D representation in an isometric view. We picked up the original project, added several new features, and made a presentation to showcase these enhancements.</br></br>
+<div align="center">
+<img src="https://github.com/mjorgecruz/42_FdF_updated/blob/main/presentation/gifs/GIFMaker_me.gif" align="center"/>
+</div>
+</br></br>
+
 
 ## Project Objective
 
@@ -41,8 +44,11 @@ Besides the
 
 1. **Standalone Application:**
    - Packaged as a standalone app for easy execution.
-  
+</br></br>
+<div align="center">
 <img src="https://github.com/mjorgecruz/42_FdF_updated/blob/main/fdf0.gif" align="center"/>
+</div>
+</br></br>
 
 2. **Selector Screen:**
    - Added a screen to select different maps or projection modes.
@@ -52,8 +58,12 @@ Besides the
    - Manual color adjustments during execution for a customized view.
 5. **Projections with a Twist:**
    - Added unique projection styles for a more creative visualization.
+     
+</br></br>
+<div align="center">
 <img src="https://github.com/mjorgecruz/42_FdF_updated/blob/main/fdf3.gif" align="center"/>
-
+</div>
+</br></br>
 ## Installation
 
 1. Clone the repository:
