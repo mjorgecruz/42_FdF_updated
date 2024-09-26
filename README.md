@@ -76,6 +76,7 @@ Besides the project itself, Rui Pires and I decided to carry on with the project
 <img src="https://github.com/mjorgecruz/42_FdF_updated/blob/main/fdf3.gif" align="center"/>
 </div>
 </br>
+
 ## How to run
 
 1. Clone the repository:
