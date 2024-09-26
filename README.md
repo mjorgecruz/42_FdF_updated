@@ -81,7 +81,7 @@ Besides the project itself, Rui Pires and I decided to carry on with the project
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your-username/fdf-enhanced.git
+    git clone https://github.com/mjorgecruz/42_FdF_updated.git
     cd fdf-enhanced
     ```
 
